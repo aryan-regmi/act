@@ -5,6 +5,11 @@
 ///
 /// This header defines a heap allocated string and various functions related to
 /// it.
+///
+/// TODO: DOCUMENT ALL ALLOCATING/RESIZING FUNCTIONS!!
+/// TODO: Add `shrink_to_fit` function
+/// TODO: Add `insert_at_index` function
+/// TODO: Add `delete_from_index` function
 
 #include "act_allocator.h"
 #include "act_utils.h"
@@ -67,35 +72,35 @@ typedef enum act_string_comparison_t {
 
 /// @brief Creates a new #act_string_t.
 ///
-/// @note This function does not allocate any memory until the first @em push
-/// operation.
-///
 /// @param allocator The allocator used to make internal memory allocations.
 ///
 /// @return A new heap allocated string.
-act_string_t act_string_new(const act_allocator_t *allocator);
-
-/// @brief Creates a new #act_string_t with a specified capacity.
 ///
 /// @note This function does not allocate any memory until the first @em push
 /// operation.
+act_string_t act_string_new(const act_allocator_t *allocator);
+
+/// @brief Creates a new #act_string_t with a specified capacity.
 ///
 /// @param allocator The allocator used to make internal memory allocations.
 /// @param capacity The number of bytes allocated.
 ///
 /// @return A new heap allocated string with the specified capacity.
+///
+/// @note This function does not allocate any memory until the first @em push
+/// operation.
 act_string_t act_string_with_capacity(const act_allocator_t *allocator,
                                       size_t capacity);
 
 /// @brief Creates a new #act_string_t from the given C-string.
 ///
-/// @note This function allocates as much memory as the length of the given
-/// C-string (plus one for the null terminator).
-///
 /// @param allocator The allocator used to make internal memory allocations.
 /// @param cstr The C-string to create the #act_string_t from.
 ///
 /// @return A heap allocated string.
+///
+/// @note This function allocates as much memory as the length of the given
+/// C-string (plus one for the null terminator).
 act_string_t act_string_from_cstr(const act_allocator_t *allocator,
                                   const char *cstr);
 
@@ -122,17 +127,52 @@ size_t act_string_capacity(act_string_t string);
 
 /// @brief Returns the underlying string stored in the #act_string_t.
 ///
-/// @param string The string to get the capacity of.
+/// @param string The string to get the C-string from.
 ///
 /// @return A C-string (null-terminated @em{const char}).
 const char *act_string_as_cstr(act_string_t string);
 
+/// @brief Push a character to the end of the #act_string_t.
+///
+/// @param string The string to push the character to.
+/// @param c The character to push to the string.
+///
+/// @return Error code.
+///
+/// @note This function allocates memory if the length of the string is zero.
+/// @note This function @em possibly allocates memory if a resize is triggered.
 act_string_error_t act_string_push_char(act_string_t *string, char c);
 
+/// @brief Push a C-string (null-terminated) to the end of the #act_string_t.
+///
+/// @param string The string to push the character to.
+/// @param cstr The C-string to push to the string.
+///
+/// @return Error code.
+///
+/// @note This function allocates memory if the length of the string is zero.
+/// @note This function @em possibly allocates memory if a resize is triggered.
 act_string_error_t act_string_push_cstr(act_string_t *string, const char *cstr);
 
+/// @brief Pop a character from the end of the #act_string_t.
+///
+/// The last character in the given string is returned and the length of the
+/// string is decremented.
+///
+/// @param string The string to pop the character from.
+///
+/// @return The last character in the string, or <strong>'\0'</strong> if an
+/// error occured.
 char act_string_pop_char(act_string_t *string);
 
+/// @brief Finds the index where the given character first occurs in the
+/// #act_string_t.
+///
+/// @param string The string find the character in.
+/// @param find_char The character to find.
+///
+/// @return The first index of the character in the string, or **-1** if an
+/// error occured.
 ssize_t act_string_find_first_idx_of_char(act_string_t string, char find_char);
 
 act_string_t *act_string_split_at_idx(act_string_t string, size_t idx);

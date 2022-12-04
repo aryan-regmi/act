@@ -163,7 +163,8 @@ char act_string_pop_char(act_string_t *string) {
 
   char retc = string->_data[len - 1];
 
-  string->_data[string->_len--] = '\0';
+  // Null terminate and decrement length
+  string->_data[string->_len--] = null_term;
 
   return retc;
 }
@@ -267,13 +268,15 @@ act_string_t act_string_concat(const act_string_t *str1,
   // Allocate enough space for both strings
   char *cat_str =
       (*concat._allocator->alloc)(combined_len + 1, sizeof(*cat_str));
+
+  // Loop over both strings and combine them into `cat_str`
   for (size_t i = 0; i < str1->_len; i++) {
     cat_str[i] = str1->_data[i];
   }
   for (size_t i = 0; i < str2->_len; i++) {
     cat_str[i + str1->_len] = str2->_data[i];
   }
-  cat_str[combined_len] = '\0';
+  cat_str[combined_len] = '\0'; // Null-terminate concatenation
 
   concat._data = cat_str;
 
