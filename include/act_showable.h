@@ -42,33 +42,128 @@ typedef act_string_t (*as_string_fnptr)(const act_showable_t *showable);
 
 /// @brief Create a new #act_showable_t type for a struct.
 ///
-/// @param TODO!!
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param struct_size The size of the struct to create a showable for.
+/// @param as_string_func The function used to convert a struct of the given
+/// type to a string.
+///
+/// @return A pointer to an allocated struct of @em struct_size.
+///
+/// @note This function allocates ```16 + struct_size``` bytes of memory (The
+/// 16 bytes is the size of the internal header used to store `showable`
+/// information).
+///
+/// @sa #act_showable_free, #ACT_SHOWABLE_NEW
 act_showable_t *
 act_showable_new(const act_allocator_t *allocator, size_t struct_size,
                  act_string_t (*as_string_func)(const act_showable_t *));
 
-#define ACT_SHOWABLE_NEW(T, allocator, show_func)                              \
-  act_showable_new(allocator, sizeof(T), (as_string_fnptr)(show_func))
-
+/// @brief Free the memory allocated by #act_showable_t.
+///
+/// @param showable The #act_showable_t value to free resources for.
+///
+/// @return Error code.
+///
+/// @sa #act_showable_new, #ACT_SHOWABLE_NEW
 act_showable_error_t act_showable_free(const act_showable_t *showable);
 
+/// @brief Returns the string representation of the given #act_showable_t.
+///
+/// @param showable The #act_showable_t value to get as a string.
+///
+/// @return A heap allocated string (#act_string_t) representing the @em
+/// showable.
+///
+/// @sa #act_string_free
 act_string_t act_showable_struct_as_string(const act_showable_t *showable);
 
+/// @brief Prints the given @em showable as a string to the specified @em
+/// logger.
+///
+/// @param showable The #act_showable_t value to print as a string.
+/// @param logger The file stream to write the string to.
+///
+/// @return Error code.
+///
+/// @sa #act_showable_struct_as_string
 act_showable_error_t act_showable_display(act_showable_t *showable,
                                           FILE *logger);
 
+/// @brief Convert a @em uint64_t value to a heap allocated string.
+///
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param val The @em uint64_t value to turn into a string.
+///
+/// @return A heap allocated string (#act_string_t) representing the @em
+/// uint64_t value.
+///
+/// @sa #act_string_free
 act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
                                            uint64_t val);
 
+/// @brief Convert a @em int64_t value to a heap allocated string.
+///
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param val The @em int64_t value to turn into a string.
+///
+/// @return A heap allocated string (#act_string_t) representing the @em
+/// int64_t value.
+///
+/// @sa #act_string_free
 act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
                                           int64_t val);
 
+/// @brief Convert a @em double value to a heap allocated string.
+///
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param val The @em double value to turn into a string.
+///
+/// @return A heap allocated string (#act_string_t) representing the @em
+/// double value.
+///
+/// @sa #act_string_free
 act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
                                            double val, size_t precision);
 
+/// @brief Convert a @em C-string value to a heap allocated string.
+///
+/// This functions just adds quotes (```""```) around the supplied C-string.
+///
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param val The @em C-string value.
+///
+/// @return A heap allocated string (#act_string_t) representing the quoted @em
+/// C-string value.
+///
+/// @sa #act_string_free
 act_string_t act_showable_cstr_as_string(const act_allocator_t *allocator,
                                          const char *val);
 
+/// @brief A macro to mark a type as #act_showable_t, so that it can be freed
+/// with #act_showable_free.
+///
+/// @param T The type (of struct usually) to create a showable (#act_showable_t)
+/// for.
 #define ACT_SHOWABLE(T) T *
 
-#endif /* !ACT_SHOWABLE */
+/// @brief Create a new #act_showable_t type for a struct of type T.
+///
+/// This is a convinience macro to avoid casts and sizeof when calling
+/// #act_showable_new.
+///
+/// @param T The type of struct to create the #act_showable_t for.
+/// @param allocator The allocator used to make internal memory allocations.
+/// @param show_func The function used to convert a value of a given type to a
+/// string.
+///
+/// @return A pointer to an allocated struct of @em struct_size.
+///
+/// @note This function allocates ```16 + sizeof(T)``` bytes of memory (The
+/// 16 bytes is the size of the internal header used to store `showable`
+/// information).
+///
+/// @sa #act_showable_free
+#define ACT_SHOWABLE_NEW(T, allocator, show_func)                              \
+  act_showable_new(allocator, sizeof(T), (as_string_fnptr)(show_func))
+
+#endif /* !ACT_SHOWABLE_H */
