@@ -2,7 +2,6 @@ build_dir=build
 exe=act
 
 default: src/**.c src/**.h
-	@cp src/**.h include/
 	@cd $(build_dir) && meson configure -Ddocs=false && meson compile
 
 run: default

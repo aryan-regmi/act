@@ -14,7 +14,7 @@ void test_can_create_new_vector(void) {
 }
 
 void test_can_create_new_vector_with_capacity(void) {
-  const size_t CAP = 10;
+  const ssize_t CAP = 10;
   ACT_VEC(double) vec = act_vector_with_capacity(&GPA, sizeof(double), CAP);
 
   TEST_CHECK(vec != NULL);
@@ -26,10 +26,10 @@ void test_can_create_new_vector_with_capacity(void) {
 }
 
 void test_can_push_to_vector(void) {
-  const size_t CAP = 5;
+  const ssize_t CAP = 5;
   ACT_VEC(size_t) vec = act_vector_with_capacity(&GPA, sizeof(size_t), CAP);
 
-  for (size_t i = 0; i < CAP; i++) {
+  for (size_t i = 0; i < (size_t)CAP; i++) {
     ACT_VEC_PUSH(vec, i);
     TEST_CHECK(vec[i] == i);
   }
@@ -38,14 +38,14 @@ void test_can_push_to_vector(void) {
 }
 
 void test_can_pop_from_vector(void) {
-  const size_t CAP = 5;
+  const ssize_t CAP = 5;
   ACT_VEC(size_t) vec = act_vector_with_capacity(&GPA, sizeof(size_t), CAP);
 
-  for (size_t i = 0; i < CAP; i++) {
+  for (size_t i = 0; i < (size_t)CAP; i++) {
     ACT_VEC_PUSH(vec, i);
   }
 
-  for (size_t i = 0; i < CAP; i++) {
+  for (size_t i = 0; i < (size_t)CAP; i++) {
     size_t cval = 0;
     ACT_VEC_POP(vec, &cval);
     TEST_CHECK(cval == CAP - 1 - i);
@@ -63,7 +63,7 @@ void test_can_resize_vector(void) {
     ACT_VEC_PUSH(vec, i * SCALE);
   }
 
-  const size_t EXPECTED_CAP = 16;
+  const ssize_t EXPECTED_CAP = 16;
   TEST_CHECK(act_vector_capacity(vec) == EXPECTED_CAP);
 
   act_vector_free(vec);

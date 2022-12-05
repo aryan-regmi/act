@@ -1,10 +1,15 @@
 project('act','c',version:'0.1',default_options: ['warning_level=3', 'buildtype=debug'])
 
+# External Deps
+cc = meson.get_compiler('c')
+math_dep = cc.find_library('m', required : true)
+
 
 # Includes
 # ========================================
 external_inc = include_directories('external')
 public_inc = include_directories('include')
+src_inc = include_directories('src')
 
 
 # Library
@@ -12,9 +17,10 @@ public_inc = include_directories('include')
 subdir('src')
 act_lib = static_library('act', 
   sources,
+  include_directories: src_inc,
+  dependencies: math_dep,
   install: true
 )
-
 
 # Copy headers to `include` directory
 copy = find_program('cp')

@@ -1,22 +1,17 @@
 #include "act_vector.h"
 
-typedef enum act_vector_error_t {
-  ACT_VECTOR_ERROR_SUCCESS = 0x0,
-  ACT_VECTOR_ERROR_NULL_POINTER,
-} act_vector_error_t;
-
 struct act_vector_header_t {
   const act_allocator_t *allocator;
 
-  size_t len;
+  ssize_t len;
 
-  size_t capacity;
+  ssize_t capacity;
 
-  size_t data_size;
+  ssize_t data_size;
 };
 
 act_vector_t *act_vector_new(const act_allocator_t *allocator,
-                             size_t data_size) {
+                             ssize_t data_size) {
   ACT_ASSERT(allocator != NULL, NULL);
 
   act_vector_header_t *header = (*allocator->alloc)(1, sizeof(*header) + 1);
@@ -31,7 +26,7 @@ act_vector_t *act_vector_new(const act_allocator_t *allocator,
 }
 
 act_vector_t *act_vector_with_capacity(const act_allocator_t *allocator,
-                                       size_t data_size, size_t capacity) {
+                                       ssize_t data_size, ssize_t capacity) {
   ACT_ASSERT(allocator != NULL, NULL);
 
   act_vector_header_t *header =
@@ -66,11 +61,11 @@ act_vector_header_t *act__vector_get_mut_header(act_vector_t *vec) {
   return header;
 }
 
-int act_vector_free(const act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+act_vector_error_t act_vector_free(const act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_VECTOR);
 
   const act_vector_header_t *header = act__vector_get_header(vec);
-  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_HEADER);
 
   (*header->allocator->free)(header);
 
@@ -82,12 +77,12 @@ act_vector_t *act__vector_resize(act_vector_t *vec) {
 
   act_vector_header_t *header = act__vector_get_mut_header(vec);
   ACT_ASSERT(vec != NULL, NULL);
-  size_t len = header->len;
-  size_t cap = header->capacity;
-  size_t data_size = header->data_size;
+  ssize_t len = header->len;
+  ssize_t cap = header->capacity;
+  ssize_t data_size = header->data_size;
   const act_allocator_t *allocator = header->allocator;
 
-  size_t new_cap = 0;
+  ssize_t new_cap = 0;
   if (cap == 0) {
     new_cap = 1;
   } else {
@@ -109,48 +104,48 @@ act_vector_t *act__vector_resize(act_vector_t *vec) {
   return new_vec;
 }
 
-size_t act_vector_len(const act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+ssize_t act_vector_len(const act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, -1);
 
   const act_vector_header_t *header = act__vector_get_header(vec);
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(vec != NULL, -1);
 
-  return header->len;
+  return (ssize_t)header->len;
 }
 
-size_t act_vector_capacity(const act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+ssize_t act_vector_capacity(const act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, -1);
 
   const act_vector_header_t *header = act__vector_get_header(vec);
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(vec != NULL, -1);
 
-  return header->capacity;
+  return (ssize_t)header->capacity;
 }
 
-size_t act_vector_data_size(const act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+ssize_t act_vector_data_size(const act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, -1);
 
   const act_vector_header_t *header = act__vector_get_header(vec);
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(vec != NULL, -1);
 
-  return header->data_size;
+  return (ssize_t)header->data_size;
 }
 
-int act__vector_incr_len(act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+act_vector_error_t act__vector_incr_len(act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_VECTOR);
 
   act_vector_header_t *header = act__vector_get_mut_header(vec);
-  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_HEADER);
   header->len++;
 
   return ACT_VECTOR_ERROR_SUCCESS;
 }
 
-int act__vector_decr_len(act_vector_t *vec) {
-  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+act_vector_error_t act__vector_decr_len(act_vector_t *vec) {
+  ACT_ASSERT(vec != NULL, ACT_VECTOR_ERROR_NULL_VECTOR);
 
   act_vector_header_t *header = act__vector_get_mut_header(vec);
-  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_POINTER);
+  ACT_ASSERT(header != NULL, ACT_VECTOR_ERROR_NULL_HEADER);
   header->len--;
 
   return ACT_VECTOR_ERROR_SUCCESS;

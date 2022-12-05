@@ -24,3 +24,12 @@ string_test = executable(
   link_with: act_lib,
 )
 test('Unit Tests String', string_test)
+
+# Showable tests
+showable_test = executable(
+  'act_unit_tests_showable',
+  'test_act_showable.c',
+  include_directories: [public_inc, external_inc],
+  link_with: act_lib,
+)
+test('Unit Tests Showable', showable_test)

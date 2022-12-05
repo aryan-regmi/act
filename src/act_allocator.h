@@ -3,11 +3,18 @@
 
 #include <stdlib.h>
 
+/// @file act_allocator.h
+///
+/// This header defines an allocator type used for supplying custom allocators
+/// to functions and structs.
+
 // PRIVATE
 // ===================================================================
 
+/// @internal
 void *act__realloc_wrapper(void *ptr, size_t nelems, size_t elem_size);
 
+/// @internal
 void act__free_wrapper(const void *ptr);
 
 // PUBLIC
