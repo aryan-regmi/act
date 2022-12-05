@@ -20,6 +20,7 @@ act_showable_t *act_showable_new(
   header->allocator = allocator;
   header->as_string = as_string_func;
 
+  // Return address right after header
   act_showable_t *retval = (uint8_t *)header + sizeof(*header);
   ACT_ASSERT(retval != NULL, NULL);
 
@@ -55,6 +56,7 @@ act_string_t act_showable_struct_as_string(const act_showable_t *showable) {
   const act_showable_header_t *header = act__showable_get_header(showable);
   ACT_ASSERT(header != NULL, ACT_SHOWABLE_NULLSTR);
 
+  // Call `as_string` function of the `showable`
   act_string_t retstr = (*header->as_string)(showable);
   ACT_ASSERT(act_string_capacity(retstr) != 0, ACT_SHOWABLE_NULLSTR);
   ACT_ASSERT(act_string_len(retstr) != 0, ACT_SHOWABLE_NULLSTR);
@@ -68,11 +70,13 @@ act_showable_error_t act_showable_display(act_showable_t *showable,
   ACT_ASSERT(showable != NULL, ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
   ACT_ASSERT(logger != NULL, ACT_SHOWABLE_ERROR_NULL_LOGGER);
 
+  // Call `as_string` of `showable`
   act_string_t display_str = act_showable_struct_as_string(showable);
   ACT_ASSERT(act_string_capacity(display_str) != 0, -1);
   ACT_ASSERT(act_string_len(display_str) != 0, -1);
   ACT_ASSERT(act_string_as_cstr(display_str) != NULL, -1);
 
+  // Print the `display_str` to the `logger`
   int status = fprintf(logger, "%s", act_string_as_cstr(display_str));
   ACT_ASSERT(status > 0, ACT_SHOWABLE_ERROR_FPRINTF_ERROR);
 
@@ -85,9 +89,11 @@ act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
                                            uint64_t val) {
   ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
 
+  // Max size required to hold `val` in string
   const size_t MAX_STR_SIZE =
       (size_t)((ceil(log10((double)val)) + 1) * sizeof(char));
 
+  // Write val to string
   char cstr[MAX_STR_SIZE + 1];
   int status = sprintf(cstr, "%zu", val);
   ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
@@ -101,9 +107,11 @@ act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
                                           int64_t val) {
   ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
 
+  // Max size required to hold `val` in string
   const size_t MAX_STR_SIZE =
       (size_t)((ceil(log10((double)val)) + 1) * sizeof(char));
 
+  // Write val to string
   char cstr[MAX_STR_SIZE + 1];
   int status = sprintf(cstr, "%ld", val);
   ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
@@ -113,6 +121,7 @@ act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
   return str;
 }
 
+/// Returns C-string with specified number of '0's.
 static const char *act__printZeros(const act_allocator_t *allocator,
                                    size_t num_zeros) {
   char *ret = (*allocator->alloc)(num_zeros + 1, sizeof(char));

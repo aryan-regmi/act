@@ -7,6 +7,7 @@
 /// it.
 ///
 /// TODO: DOCUMENT ALL ALLOCATING/RESIZING FUNCTIONS!!
+/// TODO: DOCUMENT ALL FUNCTIONS THAT RETURN NULLSTR!!
 /// TODO: Add `shrink_to_fit` function
 /// TODO: Add `insert_at_index` function
 /// TODO: Add `delete_from_index` function
@@ -197,7 +198,9 @@ ssize_t act_string_find_first_idx_of_char(act_string_t string, char find_char);
 ///
 /// @return An array containing the two split strings.
 ///
-/// @note This function allocates two #act_string_t that need to be freed.
+/// @note This function allocates 2 #act_string_t that need to be freed; the
+/// returned array is also allocated and must be freed using the input string's
+/// allocator.
 ///
 /// @sa #act_string_free, #act_string_find_first_idx_of_char
 act_string_t *act_string_split_at_idx(act_string_t string, size_t idx);

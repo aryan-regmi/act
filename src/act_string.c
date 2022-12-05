@@ -201,7 +201,11 @@ act_string_t *act_string_split_at_idx(act_string_t string, size_t idx) {
   }
   act_string_push_char(&str2, '\0');
 
-  return (act_string_t[2]){str1, str2};
+  act_string_t *splits = (*string._allocator->alloc)(2, sizeof(*splits));
+  splits[0] = str1;
+  splits[1] = str2;
+
+  return splits;
 }
 
 act_string_comparison_t act_string_compare(act_string_t str1,

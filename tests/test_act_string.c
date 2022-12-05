@@ -118,11 +118,12 @@ void test_can_split_string_at_idx(void) {
   act_string_t *splits = act_string_split_at_idx(str, idx);
   act_string_t split1 = splits[0];
   act_string_t split2 = splits[1];
+  (*str._allocator->free)(splits);
+  act_string_free(&str);
 
   TEST_CHECK(strcmp(act_string_as_cstr(split1), "Hello") == 0);
   TEST_CHECK(strcmp(act_string_as_cstr(split2), " World!") == 0);
 
-  act_string_free(&str);
   act_string_free(&split1);
   act_string_free(&split2);
 }

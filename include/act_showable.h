@@ -9,21 +9,40 @@
 #include <stdio.h>
 #include <string.h>
 
+/// @file act_showable.h
+///
+/// This header defines an interface that allows priting structs as strings.
+
+/// @brief A type defined for convinece.
 typedef void act_showable_t;
 
+/// @brief The possible error values.
 typedef enum act_showable_error_t {
+  /// Successful operation.
   ACT_SHOWABLE_ERROR_SUCCESS = 0x0,
+
+  /// The #act_showable_t pointer was NULL.
   ACT_SHOWABLE_ERROR_NULL_SHOWABLE,
+
+  /// The header pointer was NULL.
   ACT_SHOWABLE_ERROR_NULL_HEADER,
+
+  /// The #act_allocator_t pointer was NULL.
   ACT_SHOWABLE_ERROR_NULL_ALLOCATOR,
+
+  /// The provided logger (@em FILE*) pointer was NULL.
   ACT_SHOWABLE_ERROR_NULL_LOGGER,
+
+  /// **@em fprintf** returned an error.
   ACT_SHOWABLE_ERROR_FPRINTF_ERROR,
 } act_showable_error_t;
 
-#define ACT_SHOWABLE(T) T *
-
+/// @brief A type alias to the function pointer for #act_showable_new.
 typedef act_string_t (*as_string_fnptr)(const act_showable_t *showable);
 
+/// @brief Create a new #act_showable_t type for a struct.
+///
+/// @param TODO!!
 act_showable_t *
 act_showable_new(const act_allocator_t *allocator, size_t struct_size,
                  act_string_t (*as_string_func)(const act_showable_t *));
@@ -49,5 +68,7 @@ act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
 
 act_string_t act_showable_cstr_as_string(const act_allocator_t *allocator,
                                          const char *val);
+
+#define ACT_SHOWABLE(T) T *
 
 #endif /* !ACT_SHOWABLE */

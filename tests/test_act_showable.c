@@ -127,6 +127,7 @@ void test_can_create_showable_struct(void) {
 
   // act_showable_display(tst_showable, stderr);
 
+  act_string_free(&str);
   act_showable_free(tst_showable);
 }
 
