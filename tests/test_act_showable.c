@@ -1,13 +1,13 @@
 #include "act_allocator.h"
-#include "act_showable.h"
 #include "acutest.h"
+#include "interfaces/act_showable.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 void test_can_show_uint(void) {
-  act_showable_error_t err = ACT_SHOWABLE_ERROR_SUCCESS;
-  act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
   uint8_t v1 = 10;
   act_string_t str = act_showable_uint64_as_string(&GPA, v1, &err);
@@ -56,8 +56,8 @@ void test_can_show_uint(void) {
 }
 
 void test_can_show_int(void) {
-  act_showable_error_t err = ACT_SHOWABLE_ERROR_SUCCESS;
-  act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
   int8_t v1 = 10;
   act_string_t str = act_showable_int64_as_string(&GPA, v1, &err);
@@ -106,8 +106,8 @@ void test_can_show_int(void) {
 }
 
 void test_can_show_float(void) {
-  act_showable_error_t err = ACT_SHOWABLE_ERROR_SUCCESS;
-  act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
   float v1 = 10.11F;
   act_string_t str = act_showable_double_as_string(&GPA, v1, 2, &err);
@@ -129,8 +129,8 @@ void test_can_show_float(void) {
 }
 
 void test_can_show_cstring(void) {
-  act_showable_error_t err = ACT_SHOWABLE_ERROR_SUCCESS;
-  act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
   const char *v1 = "Hello World!";
 
@@ -153,7 +153,8 @@ typedef struct {
 } Tst;
 
 act_string_t Tst_show(act_showable_t *tst) {
-  act_showable_error_t err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
   Tst *tst_struct = tst;
 
@@ -174,7 +175,6 @@ act_string_t Tst_show(act_showable_t *tst) {
     exit(EXIT_FAILURE);
   }
 
-  act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
   act_string_free(&val1, &str_err);
   act_string_free(&val2, &str_err);
   act_string_free(&val3, &str_err);
@@ -194,32 +194,31 @@ void test_can_create_showable_struct(void) {
       .val3 = "Hello World!",
   };
 
-  act_showable_error_t *err = (*GPA.alloc)(1, sizeof(*err));
-  *err = 0;
+  int err = ACT_SHOWABLE_ERROR_SUCCESS;
+  int str_err = ACT_STRING_ERROR_SUCCESS;
 
-  ACT_SHOWABLE(Tst) tst_showable = ACT_SHOWABLE_NEW(Tst, &GPA, Tst_show, err);
+  ACT_SHOWABLE(Tst) tst_showable = ACT_SHOWABLE_NEW(Tst, &GPA, Tst_show, &err);
   *tst_showable = tst;
 
-  act_string_t str = act_showable_struct_as_string(tst_showable, err);
-  // TEST_CHECK(strcmp(act_string_as_cstr(str),
-  //                   "Tst {\n  val1 = 22,\n  val2 = 42.990,\n "
-  //                   " val3 = \"Hello World!\"\n}") == 0);
-  //
-  // // act_showable_display(tst_showable, stderr);
-  //
-  // act_string_error_t str_err = ACT_STRING_ERROR_SUCCESS;
-  // act_string_free(&str, &str_err);
-  // act_showable_free(tst_showable, &err);
-  //
-  // if (str_err != ACT_STRING_ERROR_SUCCESS ||
-  //     err != ACT_SHOWABLE_ERROR_SUCCESS) {
-  //   exit(EXIT_FAILURE);
-  // }
+  act_string_t str = act_showable_struct_as_string(tst_showable, &err);
+  TEST_CHECK(strcmp(act_string_as_cstr(str),
+                    "Tst {\n  val1 = 22,\n  val2 = 42.990,\n "
+                    " val3 = \"Hello World!\"\n}") == 0);
+
+  act_showable_display(tst_showable, stderr, &err);
+
+  act_string_free(&str, &str_err);
+  act_showable_free(tst_showable, &err);
+
+  if (str_err != ACT_STRING_ERROR_SUCCESS ||
+      err != ACT_SHOWABLE_ERROR_SUCCESS) {
+    exit(EXIT_FAILURE);
+  }
 }
 
 TEST_LIST = {{"[SHOWABLE] Can show struct", test_can_create_showable_struct},
-             // {"[SHOWABLE] Can show unsigned integers", test_can_show_uint},
-             // {"[SHOWABLE] Can show signed integers", test_can_show_uint},
-             // {"[SHOWABLE] Can show floats", test_can_show_float},
-             // {"[SHOWABLE] Can show C-string", test_can_show_cstring},
+             {"[SHOWABLE] Can show unsigned integers", test_can_show_uint},
+             {"[SHOWABLE] Can show signed integers", test_can_show_uint},
+             {"[SHOWABLE] Can show floats", test_can_show_float},
+             {"[SHOWABLE] Can show C-string", test_can_show_cstring},
              {NULL, NULL}};

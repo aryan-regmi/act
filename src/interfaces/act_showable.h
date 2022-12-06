@@ -78,7 +78,7 @@ typedef act_string_t (*as_string_fnptr)(const act_showable_t *showable);
 act_showable_t *
 act_showable_new(const act_allocator_t *allocator, size_t struct_size,
                  act_string_t (*as_string_func)(const act_showable_t *),
-                 act_showable_error_t *error_code);
+                 int *error_code);
 
 /// @brief Free the memory allocated by #act_showable_t.
 ///
@@ -87,8 +87,7 @@ act_showable_new(const act_allocator_t *allocator, size_t struct_size,
 ///                         operation.
 ///
 /// @sa #act_showable_new, #ACT_SHOWABLE_NEW
-void act_showable_free(const act_showable_t *showable,
-                       act_showable_error_t *error_code);
+void act_showable_free(const act_showable_t *showable, int *error_code);
 
 /// @brief Returns the string representation of the given #act_showable_t.
 ///
@@ -101,7 +100,7 @@ void act_showable_free(const act_showable_t *showable,
 ///
 /// @sa #act_string_free
 act_string_t act_showable_struct_as_string(const act_showable_t *showable,
-                                           act_showable_error_t *error_code);
+                                           int *error_code);
 
 /// @brief Prints the given @em showable as a string to the specified @em
 /// logger.
@@ -113,7 +112,7 @@ act_string_t act_showable_struct_as_string(const act_showable_t *showable,
 ///
 /// @sa #act_showable_struct_as_string
 void act_showable_display(act_showable_t *showable, FILE *logger,
-                          act_showable_error_t *error_code);
+                          int *error_code);
 
 /// @brief Convert a @em uint64_t value to a heap allocated string.
 ///
@@ -128,8 +127,7 @@ void act_showable_display(act_showable_t *showable, FILE *logger,
 ///
 /// @sa #act_string_free
 act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
-                                           uint64_t val,
-                                           act_showable_error_t *error_code);
+                                           uint64_t val, int *error_code);
 
 /// @brief Convert a @em int64_t value to a heap allocated string.
 ///
@@ -144,8 +142,7 @@ act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
 ///
 /// @sa #act_string_free
 act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
-                                          int64_t val,
-                                          act_showable_error_t *error_code);
+                                          int64_t val, int *error_code);
 
 /// @brief Convert a @em double value to a heap allocated string.
 ///
@@ -161,7 +158,7 @@ act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
 /// @sa #act_string_free
 act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
                                            double val, size_t precision,
-                                           act_showable_error_t *error_code);
+                                           int *error_code);
 
 /// @brief Convert a @em C-string value to a heap allocated string.
 ///
@@ -178,8 +175,7 @@ act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
 ///
 /// @sa #act_string_free
 act_string_t act_showable_cstr_as_string(const act_allocator_t *allocator,
-                                         const char *val,
-                                         act_showable_error_t *error_code);
+                                         const char *val, int *error_code);
 
 /// @brief A macro to mark a type as #act_showable_t, so that it can be freed
 /// with #act_showable_free.

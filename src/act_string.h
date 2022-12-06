@@ -107,8 +107,7 @@ typedef enum act_string_comparison_t {
 /// operation.
 ///
 /// @sa #act_string_free
-act_string_t act_string_new(const act_allocator_t *allocator,
-                            act_string_error_t *error_code);
+act_string_t act_string_new(const act_allocator_t *allocator, int *error_code);
 
 /// @brief Creates a new #act_string_t with a specified capacity.
 ///
@@ -125,8 +124,7 @@ act_string_t act_string_new(const act_allocator_t *allocator,
 ///
 /// @sa #act_string_free
 act_string_t act_string_with_capacity(const act_allocator_t *allocator,
-                                      size_t capacity,
-                                      act_string_error_t *error_code);
+                                      size_t capacity, int *error_code);
 
 /// @brief Creates a new #act_string_t from the given C-string.
 ///
@@ -143,15 +141,14 @@ act_string_t act_string_with_capacity(const act_allocator_t *allocator,
 ///
 /// @sa #act_string_free
 act_string_t act_string_from_cstr(const act_allocator_t *allocator,
-                                  const char *cstr,
-                                  act_string_error_t *error_code);
+                                  const char *cstr, int *error_code);
 
 /// @brief Frees all memory allocated by the #act_string_t.
 ///
 /// @param[in]  string      The string to free.
 /// @param[out] error_code  The error code (#act_string_error_t) of the
 ///                         operation.
-void act_string_free(act_string_t *string, act_string_error_t *error_code);
+void act_string_free(act_string_t *string, int *error_code);
 
 /// @brief Returns the length of the #act_string_t.
 ///
@@ -185,8 +182,7 @@ const char *act_string_as_cstr(act_string_t string);
 /// @note This function @em possibly allocates memory if a resize is triggered.
 ///
 /// @sa #act_string_pop_char
-void act_string_push_char(act_string_t *string, char c,
-                          act_string_error_t *error_code);
+void act_string_push_char(act_string_t *string, char c, int *error_code);
 
 /// @brief Push a C-string (null-terminated) to the end of the #act_string_t.
 ///
@@ -200,7 +196,7 @@ void act_string_push_char(act_string_t *string, char c,
 /// @note This function allocates memory if the length of the string is zero.
 /// @note This function @em possibly allocates memory if a resize is triggered.
 void act_string_push_cstr(act_string_t *string, const char *cstr,
-                          act_string_error_t *error_code);
+                          int *error_code);
 
 /// @brief Pop a character from the end of the #act_string_t.
 ///
@@ -214,7 +210,7 @@ void act_string_push_cstr(act_string_t *string, const char *cstr,
 /// @return The last character in the string.
 ///
 /// @sa #act_string_push_char
-char act_string_pop_char(act_string_t *string, act_string_error_t *error_code);
+char act_string_pop_char(act_string_t *string, int *error_code);
 
 /// @brief Finds the index where the given character first occurs in the
 /// #act_string_t.
@@ -226,7 +222,7 @@ char act_string_pop_char(act_string_t *string, act_string_error_t *error_code);
 ///
 /// @return The first index of the character in the string.
 size_t act_string_find_first_idx_of_char(act_string_t string, char find_char,
-                                         act_string_error_t *error_code);
+                                         int *error_code);
 
 /// @brief Splits the given #act_string_t into two at the given index.
 ///
@@ -242,8 +238,7 @@ size_t act_string_find_first_idx_of_char(act_string_t string, char find_char,
 ///
 /// @sa #act_string_free, #act_string_find_first_idx_of_char
 act_string_t *act_string_split_at_idx(act_string_t string, size_t idx,
-                                      act_string_t splits[2],
-                                      act_string_error_t *error_code);
+                                      act_string_t splits[2], int *error_code);
 
 /// @brief Compares two #act_string_t strings to each other.
 ///
@@ -256,7 +251,7 @@ act_string_t *act_string_split_at_idx(act_string_t string, size_t idx,
 ///
 /// @sa #act_string_comparison_t
 act_string_comparison_t act_string_compare(act_string_t str1, act_string_t str2,
-                                           act_string_error_t *error_code);
+                                           int *error_code);
 
 /// @brief Deep copy the given string.
 ///
@@ -270,8 +265,7 @@ act_string_comparison_t act_string_compare(act_string_t str1, act_string_t str2,
 /// string.
 ///
 /// @sa #act_string_free
-act_string_t act_string_copy(const act_string_t *string,
-                             act_string_error_t *error_code);
+act_string_t act_string_copy(const act_string_t *string, int *error_code);
 
 /// @brief Concatenate the two strings into a new one.
 ///
@@ -289,6 +283,5 @@ act_string_t act_string_copy(const act_string_t *string,
 ///
 /// @sa #act_string_free
 act_string_t act_string_concat(const act_string_t *str1,
-                               const act_string_t *str2,
-                               act_string_error_t *error_code);
+                               const act_string_t *str2, int *error_code);
 #endif /* !ACT_STRING_H */

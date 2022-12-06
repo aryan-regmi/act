@@ -1,10 +1,10 @@
 #include "act_string.h"
+#include <stdio.h>
 
 /// The default capacity to add when resizing a @em #act_string_t.
 static const size_t STRING_RESIZE_CAP = 8;
 
-act_string_t act_string_new(const act_allocator_t *allocator,
-                            act_string_error_t *error_code) {
+act_string_t act_string_new(const act_allocator_t *allocator, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(allocator != NULL,
@@ -19,8 +19,7 @@ act_string_t act_string_new(const act_allocator_t *allocator,
 }
 
 act_string_t act_string_with_capacity(const act_allocator_t *allocator,
-                                      size_t capacity,
-                                      act_string_error_t *error_code) {
+                                      size_t capacity, int *error_code) {
 
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
@@ -36,8 +35,7 @@ act_string_t act_string_with_capacity(const act_allocator_t *allocator,
 }
 
 act_string_t act_string_from_cstr(const act_allocator_t *allocator,
-                                  const char *cstr,
-                                  act_string_error_t *error_code) {
+                                  const char *cstr, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(allocator != NULL,
@@ -60,7 +58,7 @@ act_string_t act_string_from_cstr(const act_allocator_t *allocator,
   };
 }
 
-void act_string_free(act_string_t *string, act_string_error_t *error_code) {
+void act_string_free(act_string_t *string, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string != NULL, *error_code = ACT_STRING_ERROR_NULL_STRING);
@@ -76,22 +74,20 @@ size_t act_string_capacity(act_string_t string) { return string._capacity; }
 
 const char *act_string_as_cstr(act_string_t string) { return string._data; }
 
-act_string_t act__string_resize(act_string_t string,
-                                act_string_error_t *error_code) {
+act_string_t act__string_resize(act_string_t string, int *error_code) {
+  *error_code = ACT_STRING_ERROR_SUCCESS;
+
   size_t new_cap = string._capacity + STRING_RESIZE_CAP;
 
   char *tmp = (*string._allocator->resize)(string._data, new_cap, sizeof(char));
-  ACT_ASSERT_OR(tmp != NULL, *error_code = ACT_STRING_ERROR_RESIZE_FAILED);
+  // ACT_ASSERT_OR(tmp != NULL, *error_code = ACT_STRING_ERROR_RESIZE_FAILED);
   string._data = tmp;
   string._capacity = new_cap;
-
-  *error_code = ACT_STRING_ERROR_SUCCESS;
 
   return string;
 }
 
-void act_string_push_char(act_string_t *string, char c,
-                          act_string_error_t *error_code) {
+void act_string_push_char(act_string_t *string, char c, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string != NULL, *error_code = ACT_STRING_ERROR_NULL_STRING);
@@ -134,7 +130,7 @@ void act_string_push_char(act_string_t *string, char c,
 }
 
 void act_string_push_cstr(act_string_t *string, const char *cstr,
-                          act_string_error_t *error_code) {
+                          int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string != NULL, *error_code = ACT_STRING_ERROR_NULL_STRING);
@@ -160,7 +156,7 @@ void act_string_push_cstr(act_string_t *string, const char *cstr,
   // Resize if necessary
   while (len + cstr_len > capacity - 1) {
     act_string_t tmp = act__string_resize(*string, error_code);
-    ACT_ASSERT_OR(error_code == ACT_STRING_ERROR_SUCCESS,
+    ACT_ASSERT_OR(*error_code == ACT_STRING_ERROR_SUCCESS,
                   *error_code = ACT_STRING_ERROR_RESIZE_FAILED);
 
     string->_data = tmp._data;
@@ -175,7 +171,7 @@ void act_string_push_cstr(act_string_t *string, const char *cstr,
   string->_len += cstr_len;
 }
 
-char act_string_pop_char(act_string_t *string, act_string_error_t *error_code) {
+char act_string_pop_char(act_string_t *string, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   const char null_term = '\0';
@@ -195,7 +191,7 @@ char act_string_pop_char(act_string_t *string, act_string_error_t *error_code) {
 }
 
 size_t act_string_find_first_idx_of_char(act_string_t string, char find_char,
-                                         act_string_error_t *error_code) {
+                                         int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string._len != 0, *error_code = ACT_STRING_ERROR_EMPTY_STRING);
@@ -213,8 +209,7 @@ size_t act_string_find_first_idx_of_char(act_string_t string, char find_char,
 }
 
 act_string_t *act_string_split_at_idx(act_string_t string, size_t idx,
-                                      act_string_t splits[2],
-                                      act_string_error_t *error_code) {
+                                      act_string_t splits[2], int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string._len != 0, *error_code = ACT_STRING_ERROR_EMPTY_STRING);
@@ -249,7 +244,7 @@ act_string_t *act_string_split_at_idx(act_string_t string, size_t idx,
 }
 
 act_string_comparison_t act_string_compare(act_string_t str1, act_string_t str2,
-                                           act_string_error_t *error_code) {
+                                           int *error_code) {
   ACT_ASSERT_OR(str1._data != NULL,
                 *error_code = ACT_STRING_ERROR_EMPTY_STRING);
   ACT_ASSERT_OR(str2._data != NULL,
@@ -271,8 +266,7 @@ act_string_comparison_t act_string_compare(act_string_t str1, act_string_t str2,
   return ACT_STRING_COMPARISON_EQUAL;
 }
 
-act_string_t act_string_copy(const act_string_t *string,
-                             act_string_error_t *error_code) {
+act_string_t act_string_copy(const act_string_t *string, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(string != NULL, *error_code = ACT_STRING_ERROR_NULL_STRING);
@@ -303,8 +297,7 @@ act_string_t act_string_copy(const act_string_t *string,
 }
 
 act_string_t act_string_concat(const act_string_t *str1,
-                               const act_string_t *str2,
-                               act_string_error_t *error_code) {
+                               const act_string_t *str2, int *error_code) {
   *error_code = ACT_STRING_ERROR_SUCCESS;
 
   ACT_ASSERT_OR(str1 != NULL, *error_code = ACT_STRING_ERROR_NULL_STRING);
