@@ -42,6 +42,9 @@ typedef enum act_vector_error_t {
 
   /// **@em memcpy** failed.
   ACT_VECTOR_ERROR_MEMCPY_FAILED,
+
+  /// Resize #act_vector_t failed.
+  ACT_VECTOR_ERROR_RESIZE_FAILED,
 } act_vector_error_t;
 
 /// @brief Create a new #act_vector_t that stores elements of @em data_size.
@@ -78,6 +81,8 @@ act_vector_t *act_vector_with_capacity(const act_allocator_t *allocator,
                                        size_t data_size, size_t capacity,
                                        int *error_code);
 
+void act_vector_shrink_to_fit(act_vector_t *vec, int *error_code);
+
 /// @brief Free the memory allocated by the #act_vector_t.
 ///
 /// @param[in]  vec         The vector to free resources for.
@@ -113,6 +118,45 @@ size_t act_vector_capacity(const act_vector_t *vec, int *error_code);
 ///
 /// @return The data size of @em vec.
 size_t act_vector_data_size(const act_vector_t *vec, int *error_code);
+
+/// @brief Create a new #act_vector_t that stores elements of type @em T.
+///
+/// This macro calls #act_vector_new, and passes the size of @em T as the @em
+/// data_size parameter.
+///
+/// @param[in]  T           The type of the elements stored in the vector.
+/// @param[in]  allocator   The #act_allocator_t used for internal allocations.
+/// @param[out] error_code  The error code (#act_vector_error_t) of the
+///                         operation.
+///
+/// @return A heap allocated array.
+///
+/// @note This macro allocates the ```sizeof(#act_vector_header_t) + 1```.
+///
+/// @sa #act_vector_free, #act_vector_new
+#define ACT_VEC_NEW(T, allocator, error_code)                                  \
+  act_vector_new(allocator, sizeof(T), error_code)
+
+/// @brief Create a new #act_vector_t with the specified capacity.
+///
+/// This macro calls #act_vector_with_capacity, and passes the size of @em T as
+/// the @em data_size parameter.
+///
+/// @param[in]  T           The type of the elements stored in the vector.
+/// @param[in]  allocator   The #act_allocator_t used for internal allocations.
+/// @param[in]  capacity    The number of the elements (of @em data_size) to
+///                         allocate space for.
+/// @param[out] error_code  The error code (#act_vector_error_t) of the
+///                         operation.
+///
+/// @return A heap allocated array.
+///
+/// @note This macro allocates the ```sizeof(#act_vector_header_t) +
+/// sizeof(T)*capacity```.
+///
+/// @sa #act_vector_free
+#define ACT_VEC_WCAP(T, allocator, capacity, error_code)                       \
+  act_vector_with_capacity(allocator, sizeof(T), capacity, error_code)
 
 /// @brief Push the value to the end of #act_vector_t.
 ///

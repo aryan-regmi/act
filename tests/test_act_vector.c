@@ -103,6 +103,25 @@ void test_can_resize_vector(void) {
   }
 }
 
+void test_can_shrink_to_fit_vector(void) {
+  int err = ACT_VECTOR_ERROR_SUCCESS;
+
+  ACT_VEC(int) mvec = ACT_VEC_WCAP(int, &GPA, 20, &err);
+  for (int i = 0; i < 10; i++) {
+    ACT_VEC_PUSH(mvec, i, &err);
+  }
+
+  TEST_ASSERT(act_vector_capacity(mvec, &err) == 20);
+
+  act_vector_shrink_to_fit(mvec, &err);
+
+  TEST_ASSERT(act_vector_capacity(mvec, &err) == 10);
+
+  if (err != ACT_VECTOR_ERROR_SUCCESS) {
+    exit(EXIT_FAILURE);
+  }
+}
+
 TEST_LIST = {
     {"[VECTOR] Can create new act_vector_t", test_can_create_new_vector},
     {"[VECTOR] Can create new act_vector_t with capacity",
@@ -110,4 +129,6 @@ TEST_LIST = {
     {"[VECTOR] Can push values to act_vector_t", test_can_push_to_vector},
     {"[VECTOR] Can pop values from act_vector_t", test_can_pop_from_vector},
     {"[VECTOR] Can resize act_vector_t", test_can_resize_vector},
+    {"[VECTOR] Can shrink act_vector_t to fit length",
+     test_can_shrink_to_fit_vector},
     {NULL, NULL}};

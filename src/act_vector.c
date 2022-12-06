@@ -74,6 +74,23 @@ act_vector_header_t *act__vector_get_mut_header(act_vector_t *vec,
   return header;
 }
 
+void act_vector_shrink_to_fit(act_vector_t *vec, int *error_code) {
+  *error_code = ACT_VECTOR_ERROR_SUCCESS;
+
+  act_vector_header_t *header = act__vector_get_mut_header(vec, error_code);
+
+  // Only need to shrink if capacity is larger than length (plus null
+  // terminator)
+  if (header->capacity > header->len) {
+    header->capacity = header->len;
+
+    act_vector_header_t *tmp =
+        (*header->allocator->resize)(header, 1, sizeof(*header) + header->len);
+    ACT_ASSERT_OR(tmp != NULL, *error_code = ACT_VECTOR_ERROR_RESIZE_FAILED);
+    header = tmp;
+  }
+}
+
 void act_vector_free(const act_vector_t *vec, int *error_code) {
   *error_code = ACT_VECTOR_ERROR_SUCCESS;
 
