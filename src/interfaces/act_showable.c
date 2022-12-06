@@ -1,93 +1,128 @@
 #include "act_showable.h"
+#include <stdio.h>
 
 typedef struct act_showable_header_t {
   const act_allocator_t *allocator;
   act_string_t (*as_string)(const act_showable_t *showable);
 } act_showable_header_t;
 
-static const act_string_t ACT_SHOWABLE_NULLSTR = {0};
+act_showable_t *
+act_showable_new(const act_allocator_t *allocator, size_t struct_size,
+                 act_string_t (*as_string_func)(const act_showable_t *showable),
+                 act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
 
-act_showable_t *act_showable_new(
-    const act_allocator_t *allocator, size_t struct_size,
-    act_string_t (*as_string_func)(const act_showable_t *showable)) {
-  ACT_ASSERT(allocator != NULL, NULL);
+  ACT_ASSERT_OR(allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   // Allocate a act_showable_header_t
   act_showable_header_t *header =
       (*allocator->alloc)(1, sizeof(*header) + struct_size);
-  ACT_ASSERT(header != NULL, NULL);
+  ACT_ASSERT_OR(header != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   header->allocator = allocator;
   header->as_string = as_string_func;
 
   // Return address right after header
   act_showable_t *retval = (uint8_t *)header + sizeof(*header);
-  ACT_ASSERT(retval != NULL, NULL);
+  ACT_ASSERT_OR(retval != NULL, *error_code = ACT_SHOWABLE_ERROR_NULL_POINTER);
 
   return retval;
 }
 
 static const act_showable_header_t *
-act__showable_get_header(const act_showable_t *showable) {
-  ACT_ASSERT(showable != NULL, NULL);
+act__showable_get_header(const act_showable_t *showable,
+                         act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(showable != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
 
   const act_showable_header_t *header = showable;
   header = (act_showable_header_t *)((uint8_t *)header - sizeof(*header));
-  ACT_ASSERT(header != NULL, NULL);
+  ACT_ASSERT_OR(header != NULL, *error_code = ACT_SHOWABLE_ERROR_NULL_HEADER);
 
   return header;
 }
 
-act_showable_error_t act_showable_free(const act_showable_t *showable) {
-  ACT_ASSERT(showable != NULL, ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
+void act_showable_free(const act_showable_t *showable,
+                       act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
 
-  const act_showable_header_t *header = act__showable_get_header(showable);
-  ACT_ASSERT(header != NULL, ACT_SHOWABLE_ERROR_NULL_HEADER);
-  ACT_ASSERT(header->allocator != NULL, ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
+  ACT_ASSERT_OR(showable != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
+
+  const act_showable_header_t *header =
+      act__showable_get_header(showable, error_code);
+  ACT_ASSERT_OR(header != NULL, *error_code = ACT_SHOWABLE_ERROR_NULL_HEADER);
+  ACT_ASSERT_OR(header->allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   (*header->allocator->free)(header);
-
-  return ACT_SHOWABLE_ERROR_SUCCESS;
 }
 
-act_string_t act_showable_struct_as_string(const act_showable_t *showable) {
-  ACT_ASSERT(showable != NULL, ACT_SHOWABLE_NULLSTR);
+act_string_t act_showable_struct_as_string(const act_showable_t *showable,
+                                           act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
 
-  const act_showable_header_t *header = act__showable_get_header(showable);
-  ACT_ASSERT(header != NULL, ACT_SHOWABLE_NULLSTR);
+  ACT_ASSERT_OR(showable != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
+
+  const act_showable_header_t *header =
+      act__showable_get_header(showable, error_code);
+  ACT_ASSERT_OR(*error_code == ACT_SHOWABLE_ERROR_SUCCESS, NULL);
+  ACT_ASSERT_OR(header != NULL, *error_code = ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
 
   // Call `as_string` function of the `showable`
   act_string_t retstr = (*header->as_string)(showable);
-  ACT_ASSERT(act_string_capacity(retstr) != 0, ACT_SHOWABLE_NULLSTR);
-  ACT_ASSERT(act_string_len(retstr) != 0, ACT_SHOWABLE_NULLSTR);
-  ACT_ASSERT(act_string_as_cstr(retstr) != NULL, ACT_SHOWABLE_NULLSTR);
-
-  return retstr;
+  // ACT_ASSERT_OR(act_string_capacity(retstr) != 0,
+  //               *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
+  // ACT_ASSERT_OR(act_string_len(retstr) != 0,
+  //               *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
+  // ACT_ASSERT_OR(act_string_as_cstr(retstr) != NULL,
+  //               *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
+  //
+  // return retstr;
+  return (act_string_t){0};
 }
 
-act_showable_error_t act_showable_display(act_showable_t *showable,
-                                          FILE *logger) {
-  ACT_ASSERT(showable != NULL, ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
-  ACT_ASSERT(logger != NULL, ACT_SHOWABLE_ERROR_NULL_LOGGER);
+void act_showable_display(act_showable_t *showable, FILE *logger,
+                          act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(showable != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_SHOWABLE);
+  ACT_ASSERT_OR(logger != NULL, *error_code = ACT_SHOWABLE_ERROR_NULL_LOGGER);
 
   // Call `as_string` of `showable`
-  act_string_t display_str = act_showable_struct_as_string(showable);
-  ACT_ASSERT(act_string_capacity(display_str) != 0, -1);
-  ACT_ASSERT(act_string_len(display_str) != 0, -1);
-  ACT_ASSERT(act_string_as_cstr(display_str) != NULL, -1);
+  act_string_t display_str =
+      act_showable_struct_as_string(showable, error_code);
+  ACT_ASSERT_OR(error_code == ACT_SHOWABLE_ERROR_SUCCESS, NULL);
+  ACT_ASSERT_OR(act_string_capacity(display_str) != 0,
+                *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
+  ACT_ASSERT_OR(act_string_len(display_str) != 0,
+                *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
+  ACT_ASSERT_OR(act_string_as_cstr(display_str) != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_EMPTY_STRING);
 
   // Print the `display_str` to the `logger`
   int status = fprintf(logger, "%s", act_string_as_cstr(display_str));
-  ACT_ASSERT(status > 0, ACT_SHOWABLE_ERROR_FPRINTF_ERROR);
+  ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_FPRINTF_ERROR);
 
-  act_string_free(&display_str);
-
-  return ACT_SHOWABLE_ERROR_SUCCESS;
+  act_string_error_t *str_err = NULL;
+  act_string_free(&display_str, str_err);
+  ACT_ASSERT_OR(*str_err == ACT_STRING_ERROR_SUCCESS,
+                *error_code = ACT_SHOWABLE_ERROR_STRING_FREE_FAILED);
 }
 
 act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
-                                           uint64_t val) {
-  ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
+                                           uint64_t val,
+                                           act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   // Max size required to hold `val` in string
   const size_t MAX_STR_SIZE =
@@ -96,16 +131,25 @@ act_string_t act_showable_uint64_as_string(const act_allocator_t *allocator,
   // Write val to string
   char cstr[MAX_STR_SIZE + 1];
   int status = sprintf(cstr, "%zu", val);
-  ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
+  ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_SPRINTF_ERROR);
   cstr[MAX_STR_SIZE] = '\0';
 
-  act_string_t str = act_string_from_cstr(allocator, cstr);
+  act_string_error_t *str_err = (*allocator->alloc)(1, sizeof(*str_err));
+  act_string_t str = act_string_from_cstr(allocator, cstr, str_err);
+  ACT_ASSERT_OR(*str_err == ACT_STRING_ERROR_SUCCESS,
+                *error_code = ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED);
+  (*allocator->free)(str_err);
+
   return str;
 }
 
 act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
-                                          int64_t val) {
-  ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
+                                          int64_t val,
+                                          act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   // Max size required to hold `val` in string
   const size_t MAX_STR_SIZE =
@@ -114,10 +158,16 @@ act_string_t act_showable_int64_as_string(const act_allocator_t *allocator,
   // Write val to string
   char cstr[MAX_STR_SIZE + 1];
   int status = sprintf(cstr, "%ld", val);
-  ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
+  ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_SPRINTF_ERROR);
   cstr[MAX_STR_SIZE] = '\0';
 
-  act_string_t str = act_string_from_cstr(allocator, cstr);
+  act_string_error_t *str_err = (*allocator->alloc)(1, sizeof(*str_err));
+  *str_err = ACT_STRING_ERROR_SUCCESS;
+  act_string_t str = act_string_from_cstr(allocator, cstr, str_err);
+  ACT_ASSERT_OR(*str_err == ACT_STRING_ERROR_SUCCESS,
+                *error_code = ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED);
+  (*allocator->free)(str_err);
+
   return str;
 }
 
@@ -134,8 +184,12 @@ static const char *act__printZeros(const act_allocator_t *allocator,
 }
 
 act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
-                                           double val, size_t precision) {
-  ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
+                                           double val, size_t precision,
+                                           act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   // Max size to store float as string
   const size_t MAX_STR_SIZE =
@@ -162,27 +216,41 @@ act_string_t act_showable_double_as_string(const act_allocator_t *allocator,
     int status =
         sprintf(cstr, "%d.%s%d", (int)integral, zeros, (int)fractional);
     (*allocator->free)(zeros);
-    ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
+    ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_SPRINTF_ERROR);
   } else {
     int status = sprintf(cstr, "%d.%d", (int)integral, (int)fractional);
-    ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
+    ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_SPRINTF_ERROR);
   }
   cstr[MAX_STR_SIZE] = '\0';
 
-  act_string_t str = act_string_from_cstr(allocator, cstr);
+  act_string_error_t *str_err = (*allocator->alloc)(1, sizeof(*str_err));
+  act_string_t str = act_string_from_cstr(allocator, cstr, str_err);
+  ACT_ASSERT_OR(str_err == ACT_STRING_ERROR_SUCCESS,
+                *error_code = ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED);
+  (*allocator->free)(str_err);
+
   return str;
 }
 
 act_string_t act_showable_cstr_as_string(const act_allocator_t *allocator,
-                                         const char *val) {
-  ACT_ASSERT(allocator != NULL, ACT_SHOWABLE_NULLSTR);
+                                         const char *val,
+                                         act_showable_error_t *error_code) {
+  *error_code = ACT_SHOWABLE_ERROR_SUCCESS;
+
+  ACT_ASSERT_OR(allocator != NULL,
+                *error_code = ACT_SHOWABLE_ERROR_NULL_ALLOCATOR);
 
   // Add quotes around string
   size_t len = strlen(val);
   char quoted[len + 3];
   int status = sprintf(quoted, "\"%s\"", val);
-  ACT_ASSERT(status > 0, ACT_SHOWABLE_NULLSTR);
+  ACT_ASSERT_OR(status > 0, *error_code = ACT_SHOWABLE_ERROR_SPRINTF_ERROR);
 
-  act_string_t str = act_string_from_cstr(allocator, quoted);
+  act_string_error_t *str_err = (*allocator->alloc)(1, sizeof(*str_err));
+  act_string_t str = act_string_from_cstr(allocator, quoted, str_err);
+  ACT_ASSERT_OR(str_err == ACT_STRING_ERROR_SUCCESS,
+                *error_code = ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED);
+  (*allocator->free)(str_err);
+
   return str;
 }

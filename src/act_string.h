@@ -20,11 +20,11 @@
 
 /// @brief **[PRIVATE]** Represents the a heap allocated string.
 ///
-/// @param allocator An allocator for making internal allocations
-/// #act_allocator_t.
-/// @param len The length of the allocated string.
-/// @param capacity The total number of bytes allocated for the string.
-/// @param data The actual C-string being stored.
+/// @param allocator  An allocator for making internal allocations
+///                   #act_allocator_t.
+/// @param len        The length of the allocated string.
+/// @param capacity   The total number of bytes allocated for the string.
+/// @param data       The actual C-string being stored.
 ///
 /// @note All parameters of this struct are **private** and should not be
 /// accessed directly; use the associated functions to access them instead.
@@ -51,11 +51,32 @@ typedef enum act_string_error_t {
   /// Successful operation.
   ACT_STRING_ERROR_SUCCESS = 0x0,
 
-  /// A null string error.
+  /// The given string was **NULL**.
   ACT_STRING_ERROR_NULL_STRING,
 
   /// A failure in resizing.
   ACT_STRING_ERROR_RESIZE_FAILED,
+
+  /// The given allocator pointer was **NULL**.
+  ACT_STRING_ERROR_NULL_ALLOCATOR,
+
+  /// A failure during allocation.
+  ACT_STRING_ERROR_ALLOCATION_FAILED,
+
+  /// A failure during memcpy.
+  ACT_STRING_ERROR_MEMCPY_FAILED,
+
+  /// A failure during memmove.
+  ACT_STRING_ERROR_MEMMOVE_FAILED,
+
+  /// The given string was empty.
+  ACT_STRING_ERROR_EMPTY_STRING,
+
+  /// The character was not found in the string.
+  ACT_STRING_ERROR_CHAR_NOT_IN_STRING,
+
+  /// The index was out of bounds.
+  ACT_STRING_ERROR_INDEX_OUT_OF_BOUNDS,
 } act_string_error_t;
 
 /// @brief Possible return values from #act_string_compare.
@@ -70,15 +91,15 @@ typedef enum act_string_comparison_t {
   ACT_STRING_COMPARISON_LESS_THAN,
 
   /// The strings are not equal.
-  ACT_STRING_COMPARISON_UNEQUAL,
-
-  /// The function returned an error.
-  ACT_STRING_COMPARISON_INVALID,
+  ACT_STRING_COMPARISON_NOT_EQUAL,
 } act_string_comparison_t;
 
 /// @brief Creates a new #act_string_t.
 ///
-/// @param allocator The allocator used to make internal memory allocations.
+/// @param[in]  allocator   The allocator used to make internal memory
+///                         allocations.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return A new heap allocated string.
 ///
@@ -86,12 +107,16 @@ typedef enum act_string_comparison_t {
 /// operation.
 ///
 /// @sa #act_string_free
-act_string_t act_string_new(const act_allocator_t *allocator);
+act_string_t act_string_new(const act_allocator_t *allocator,
+                            act_string_error_t *error_code);
 
 /// @brief Creates a new #act_string_t with a specified capacity.
 ///
-/// @param allocator The allocator used to make internal memory allocations.
-/// @param capacity The number of bytes allocated.
+/// @param[in]  allocator   The allocator used to make internal memory
+///                         allocations.
+/// @param[in]  capacity    The number of bytes allocated.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return A new heap allocated string with the specified capacity.
 ///
@@ -100,12 +125,16 @@ act_string_t act_string_new(const act_allocator_t *allocator);
 ///
 /// @sa #act_string_free
 act_string_t act_string_with_capacity(const act_allocator_t *allocator,
-                                      size_t capacity);
+                                      size_t capacity,
+                                      act_string_error_t *error_code);
 
 /// @brief Creates a new #act_string_t from the given C-string.
 ///
-/// @param allocator The allocator used to make internal memory allocations.
-/// @param cstr The C-string to create the #act_string_t from.
+/// @param[in]  allocator   The allocator used to make internal memory
+///                         allocations.
+/// @param[in]  cstr        The C-string to create the #act_string_t from.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return A heap allocated string.
 ///
@@ -114,14 +143,15 @@ act_string_t act_string_with_capacity(const act_allocator_t *allocator,
 ///
 /// @sa #act_string_free
 act_string_t act_string_from_cstr(const act_allocator_t *allocator,
-                                  const char *cstr);
+                                  const char *cstr,
+                                  act_string_error_t *error_code);
 
 /// @brief Frees all memory allocated by the #act_string_t.
 ///
-/// @param string The string to free.
-///
-/// @return Error code.
-act_string_error_t act_string_free(act_string_t *string);
+/// @param[in]  string      The string to free.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
+void act_string_free(act_string_t *string, act_string_error_t *error_code);
 
 /// @brief Returns the length of the #act_string_t.
 ///
@@ -146,79 +176,93 @@ const char *act_string_as_cstr(act_string_t string);
 
 /// @brief Push a character to the end of the #act_string_t.
 ///
-/// @param string The string to push the character to.
-/// @param c The character to push to the string.
-///
-/// @return Error code.
+/// @param[in]  string      The string to push the character to.
+/// @param[in]  c           The character to push to the string.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @note This function allocates memory if the length of the string is zero.
 /// @note This function @em possibly allocates memory if a resize is triggered.
 ///
 /// @sa #act_string_pop_char
-act_string_error_t act_string_push_char(act_string_t *string, char c);
+void act_string_push_char(act_string_t *string, char c,
+                          act_string_error_t *error_code);
 
 /// @brief Push a C-string (null-terminated) to the end of the #act_string_t.
 ///
-/// @param string The string to push the character to.
-/// @param cstr The C-string to push to the string.
+/// @param[in]  string      The string to push the character to.
+/// @param[in]  cstr        The C-string to push to the string.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return Error code.
 ///
 /// @note This function allocates memory if the length of the string is zero.
 /// @note This function @em possibly allocates memory if a resize is triggered.
-act_string_error_t act_string_push_cstr(act_string_t *string, const char *cstr);
+void act_string_push_cstr(act_string_t *string, const char *cstr,
+                          act_string_error_t *error_code);
 
 /// @brief Pop a character from the end of the #act_string_t.
 ///
 /// The last character in the given string is returned and the length of the
 /// string is decremented.
 ///
-/// @param string The string to pop the character from.
+/// @param[in]  string      The string to pop the character from.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
-/// @return The last character in the string, or <strong>'\0'</strong> if an
-/// error occured.
+/// @return The last character in the string.
 ///
 /// @sa #act_string_push_char
-char act_string_pop_char(act_string_t *string);
+char act_string_pop_char(act_string_t *string, act_string_error_t *error_code);
 
 /// @brief Finds the index where the given character first occurs in the
 /// #act_string_t.
 ///
-/// @param string The string find the character in.
-/// @param find_char The character to find.
+/// @param[in]  string      The string find the character in.
+/// @param[in]  find_char   The character to find.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
-/// @return The first index of the character in the string, or **-1** if an
-/// error occured.
-ssize_t act_string_find_first_idx_of_char(act_string_t string, char find_char);
+/// @return The first index of the character in the string.
+size_t act_string_find_first_idx_of_char(act_string_t string, char find_char,
+                                         act_string_error_t *error_code);
 
 /// @brief Splits the given #act_string_t into two at the given index.
 ///
-/// @param string The string to split.
-/// @param idx The character index to split the string at.
+/// @param[in]  string      The string to split.
+/// @param[in]  idx         The character index to split the string at.
+/// @param[out] splits      The array containing the two split strings.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
-/// @return An array containing the two split strings.
+/// @return An array containing the two split strings (@em splits).
 ///
-/// @note This function allocates 2 #act_string_t that need to be freed; the
-/// returned array is also allocated and must be freed using the input string's
-/// allocator.
+/// @note This function allocates 2 #act_string_t that need to be freed.
 ///
 /// @sa #act_string_free, #act_string_find_first_idx_of_char
-act_string_t *act_string_split_at_idx(act_string_t string, size_t idx);
+act_string_t *act_string_split_at_idx(act_string_t string, size_t idx,
+                                      act_string_t splits[2],
+                                      act_string_error_t *error_code);
 
 /// @brief Compares two #act_string_t strings to each other.
 ///
-/// @param str1 The first string to compare.
-/// @param str2 The second string to compare.
+/// @param[in]  str1        The first string to compare.
+/// @param[in]  str2        The second string to compare.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
-/// @return An enum describing the comparison result.
+/// @return An enum describing the comparison result (#act_string_comparison_t).
 ///
 /// @sa #act_string_comparison_t
-act_string_comparison_t act_string_compare(act_string_t str1,
-                                           act_string_t str2);
+act_string_comparison_t act_string_compare(act_string_t str1, act_string_t str2,
+                                           act_string_error_t *error_code);
 
 /// @brief Deep copy the given string.
 ///
-/// @param string The string to create a deep copy of.
+/// @param[in]  string      The string to create a deep copy of.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return A deep-copied version of the input string.
 ///
@@ -226,14 +270,17 @@ act_string_comparison_t act_string_compare(act_string_t str1,
 /// string.
 ///
 /// @sa #act_string_free
-act_string_t act_string_copy(const act_string_t *string);
+act_string_t act_string_copy(const act_string_t *string,
+                             act_string_error_t *error_code);
 
 /// @brief Concatenate the two strings into a new one.
 ///
 /// This function does not modify the input parameters.
 ///
-/// @param str1 The string to concat to.
-/// @param str2 The string to concat.
+/// @param[in]  str1        The string to concat to.
+/// @param[in]  str2        The string to concat.
+/// @param[out] error_code  The error code (#act_string_error_t) of the
+///                         operation.
 ///
 /// @return A string with the first string concatenated to the second.
 ///
@@ -242,5 +289,6 @@ act_string_t act_string_copy(const act_string_t *string);
 ///
 /// @sa #act_string_free
 act_string_t act_string_concat(const act_string_t *str1,
-                               const act_string_t *str2);
+                               const act_string_t *str2,
+                               act_string_error_t *error_code);
 #endif /* !ACT_STRING_H */

@@ -4,6 +4,8 @@
 /// @file act_utils.h
 ///
 /// This header defines common utilities used by various programs.
+///
+/// TODO: MAKE ACT_ASSERT_OR SHORT-CIRCUIT (RETURN ON FAILURE)
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -30,7 +32,7 @@ static inline void act_null_check(const void *ptr, FILE *logger,
 
 #ifndef ACT_ASSERT_NOOP
 
-/// This macro calls @a act_null_check with `stderr` as the logger.
+/// @brief This macro calls @a act_null_check with `stderr` as the logger.
 ///
 /// @param ptr The pointer to check against @p NULL.
 #define ACT_NULLCHECK(ptr) act_null_check(ptr, stderr, __FILE__, __LINE__)
@@ -46,10 +48,22 @@ static inline void act_null_check(const void *ptr, FILE *logger,
     }                                                                          \
   } while (0);
 
+/// @brief This macro asserts that the given expression is `true`, or exectues
+/// the default expression.
+///
+/// @param expr The boolean expression that is checked against `true`
+/// @param default_expr The expression to run if @a expr is `false`.
+#define ACT_ASSERT_OR(expr, default_expr)                                      \
+  do {                                                                         \
+    if ((expr) == false) {                                                     \
+      default_expr;                                                            \
+    }                                                                          \
+  } while (0);
+
 #else
 #define ACT_NULLCHECK(_ptr)
-
 #define ACT_ASSERT(_expr)
+#define ACT_ASSERT_OR(expr, default_expr, retval)
 #endif
 
 #endif /* !ACT_UTILS_H */
