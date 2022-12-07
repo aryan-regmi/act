@@ -1,5 +1,5 @@
 config_data.set('INPUT', meson.source_root())
-config_data.set('OUTPUT', meson.build_root())
+config_data.set('OUTPUT', meson.source_root() + '/doc')
 
 doxyfile = configure_file(input: 'Doxyfile.in',
                           output: 'Doxyfile',

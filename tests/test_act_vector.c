@@ -3,67 +3,67 @@
 #include "acutest.h"
 #include <stdlib.h>
 
-void test_can_create_new_vector(void) {
+void test_canCreateNewVector(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
-  ACT_VEC(double) vec = act_vector_new(&GPA, sizeof(double), &err);
+  ACT_VEC(double) vec = act_vectorNew(&GPA, sizeof(double), &err);
 
   TEST_CHECK(vec != NULL);
-  TEST_CHECK(act_vector_len(vec, &err) == 0);
-  TEST_CHECK(act_vector_capacity(vec, &err) == 0);
-  TEST_CHECK(act_vector_data_size(vec, &err) == sizeof(double));
+  TEST_CHECK(act_vectorLen(vec, &err) == 0);
+  TEST_CHECK(act_vectorCapacity(vec, &err) == 0);
+  TEST_CHECK(act_vectorDataSize(vec, &err) == sizeof(double));
 
-  act_vector_free(vec, &err);
+  act_vectorFree(vec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
   }
 }
 
-void test_can_create_new_vector_with_capacity(void) {
+void test_canCreateNewVectorWithCapacity(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
   const size_t CAP = 10;
   ACT_VEC(double)
-  vec = act_vector_with_capacity(&GPA, sizeof(double), CAP, &err);
+  vec = act_vectorWithCapacity(&GPA, sizeof(double), CAP, &err);
 
   TEST_CHECK(vec != NULL);
-  TEST_CHECK(act_vector_len(vec, &err) == 0);
-  TEST_CHECK(act_vector_capacity(vec, &err) == CAP);
-  TEST_CHECK(act_vector_data_size(vec, &err) == sizeof(double));
+  TEST_CHECK(act_vectorLen(vec, &err) == 0);
+  TEST_CHECK(act_vectorCapacity(vec, &err) == CAP);
+  TEST_CHECK(act_vectorDataSize(vec, &err) == sizeof(double));
 
-  act_vector_free(vec, &err);
+  act_vectorFree(vec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
   }
 }
 
-void test_can_push_to_vector(void) {
+void test_canPushToVector(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
   const size_t CAP = 5;
   ACT_VEC(size_t)
-  vec = act_vector_with_capacity(&GPA, sizeof(size_t), CAP, &err);
+  vec = act_vectorWithCapacity(&GPA, sizeof(size_t), CAP, &err);
 
   for (size_t i = 0; i < (size_t)CAP; i++) {
     ACT_VEC_PUSH(vec, i, &err);
     TEST_CHECK(vec[i] == i);
   }
 
-  act_vector_free(vec, &err);
+  act_vectorFree(vec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
   }
 }
 
-void test_can_pop_from_vector(void) {
+void test_canPopFromVector(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
   const size_t CAP = 5;
   ACT_VEC(size_t)
-  vec = act_vector_with_capacity(&GPA, sizeof(size_t), CAP, &err);
+  vec = act_vectorWithCapacity(&GPA, sizeof(size_t), CAP, &err);
 
   for (size_t i = 0; i < (size_t)CAP; i++) {
     ACT_VEC_PUSH(vec, i, &err);
@@ -75,17 +75,17 @@ void test_can_pop_from_vector(void) {
     TEST_CHECK(cval == CAP - 1 - i);
   }
 
-  act_vector_free(vec, &err);
+  act_vectorFree(vec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
   }
 }
 
-void test_can_resize_vector(void) {
+void test_canResizeVector(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
-  ACT_VEC(double) vec = act_vector_new(&GPA, sizeof(double), &err);
+  ACT_VEC(double) vec = act_vectorNew(&GPA, sizeof(double), &err);
 
   const size_t LEN = 11;
   const double SCALE = 0.5;
@@ -94,16 +94,16 @@ void test_can_resize_vector(void) {
   }
 
   const size_t EXPECTED_CAP = 16;
-  TEST_CHECK(act_vector_capacity(vec, &err) == EXPECTED_CAP);
+  TEST_CHECK(act_vectorCapacity(vec, &err) == EXPECTED_CAP);
 
-  act_vector_free(vec, &err);
+  act_vectorFree(vec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
   }
 }
 
-void test_can_shrink_to_fit_vector(void) {
+void test_canShrinkToFitVector(void) {
   int err = ACT_VECTOR_ERROR_SUCCESS;
 
   ACT_VEC(int) mvec = ACT_VEC_WCAP(int, &GPA, 20, &err);
@@ -111,11 +111,14 @@ void test_can_shrink_to_fit_vector(void) {
     ACT_VEC_PUSH(mvec, i, &err);
   }
 
-  TEST_ASSERT(act_vector_capacity(mvec, &err) == 20);
+  TEST_ASSERT(act_vectorCapacity(mvec, &err) == 20);
 
-  act_vector_shrink_to_fit(mvec, &err);
+  // act_vectorShrinkToFit(mvec, &err);
+  ACT_VEC_SHRINK_TO_FIT(int, mvec, &err);
 
-  TEST_ASSERT(act_vector_capacity(mvec, &err) == 10);
+  TEST_ASSERT(act_vectorCapacity(mvec, &err) == 10);
+
+  act_vectorFree(mvec, &err);
 
   if (err != ACT_VECTOR_ERROR_SUCCESS) {
     exit(EXIT_FAILURE);
@@ -123,12 +126,12 @@ void test_can_shrink_to_fit_vector(void) {
 }
 
 TEST_LIST = {
-    {"[VECTOR] Can create new act_vector_t", test_can_create_new_vector},
+    {"[VECTOR] Can create new act_vector_t", test_canCreateNewVector},
     {"[VECTOR] Can create new act_vector_t with capacity",
-     test_can_create_new_vector_with_capacity},
-    {"[VECTOR] Can push values to act_vector_t", test_can_push_to_vector},
-    {"[VECTOR] Can pop values from act_vector_t", test_can_pop_from_vector},
-    {"[VECTOR] Can resize act_vector_t", test_can_resize_vector},
+     test_canCreateNewVectorWithCapacity},
+    {"[VECTOR] Can push values to act_vector_t", test_canPushToVector},
+    {"[VECTOR] Can pop values from act_vector_t", test_canPopFromVector},
+    {"[VECTOR] Can resize act_vector_t", test_canResizeVector},
     {"[VECTOR] Can shrink act_vector_t to fit length",
-     test_can_shrink_to_fit_vector},
+     test_canShrinkToFitVector},
     {NULL, NULL}};

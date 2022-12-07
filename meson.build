@@ -8,8 +8,9 @@ math_dep = cc.find_library('m', required : true)
 # Includes
 # ========================================
 external_inc = include_directories('external')
-public_inc = include_directories('include')
-src_inc = include_directories('src')
+public_types_inc = include_directories('include/types')
+public_interfaces_inc = include_directories('include/interfaces')
+src_types_inc = include_directories('src/types')
 
 
 # Library
@@ -17,7 +18,7 @@ src_inc = include_directories('src')
 subdir('src')
 act_lib = static_library('act', 
   sources,
-  include_directories: src_inc,
+  include_directories: src_types_inc,
   dependencies: math_dep,
   install: true
 )
@@ -37,7 +38,7 @@ run_command(
 exe = executable(
   'act',
   'act.c',
-  include_directories: public_inc,
+  include_directories: [public_types_inc, public_interfaces_inc],
   link_with: act_lib,
   install: true
 )
