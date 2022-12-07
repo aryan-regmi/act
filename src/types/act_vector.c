@@ -10,7 +10,7 @@ struct act_VectorHeader {
   size_t data_size;
 };
 
-act_Vector *act_vectorNew(const act_Allocator *allocator, ssize_t data_size,
+act_Vector *act_vectorNew(const act_Allocator *allocator, size_t data_size,
                           int *error_code) {
   *error_code = ACT_VECTOR_ERROR_SUCCESS;
 
