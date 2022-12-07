@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resize_131',['resize',['../structact__allocator__t.html#a8f67a9e5560012dd3f950d813cc2ceba',1,'act_allocator_t']]]
+  ['resize_135',['resize',['../structact__Allocator.html#a5601b782acd965b04d098a827caf8705',1,'act_Allocator']]]
 ];

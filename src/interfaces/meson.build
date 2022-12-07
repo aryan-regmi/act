@@ -1,4 +1,4 @@
-include_directories('../types')
+include_directories('../core')
 
 interfaces_headers = files([
   'act_showable.h'

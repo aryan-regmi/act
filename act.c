@@ -1,5 +1,5 @@
-#include "act_allocator.h"
-#include "act_vector.h"
+#include "act.h"
+#include "src/core/act_string.h"
 #include <stdio.h>
 
 #define PROJECT_NAME "act"
@@ -13,9 +13,10 @@ int main(int argc, char **argv) {
 
   int err = 0;
   ACT_VEC(int) vec = ACT_VEC_NEW(int, &GPA, &err);
+  act_String str = act_stringNew(&GPA, &err);
 
   act_vectorFree(vec, &err);
-  // act_string_free(&str, &err);
+  act_stringFree(&str, &err);
 
   return 0;
 }

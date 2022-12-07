@@ -98,81 +98,90 @@ Include dependency graph for act_showable.h:</div>
 <area shape="rect" title=" " alt="" coords="201,259,284,285"/>
 </map>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="act__showable_8h__dep__incl.png" border="0" usemap="#a_2home_2aryan_2Dev_2C_2act_2include_2interfaces_2act__showable_8hdep" alt=""/></div>
+<map name="a_2home_2aryan_2Dev_2C_2act_2include_2interfaces_2act__showable_8hdep" id="a_2home_2aryan_2Dev_2C_2act_2include_2interfaces_2act__showable_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,176,61"/>
+<area shape="rect" href="act_8h_source.html" title=" " alt="" coords="5,109,176,151"/>
+</map>
+</div>
 </div>
 <p><a href="act__showable_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:aa4bb06a544dda96fdac27e316d7b674b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aa4bb06a544dda96fdac27e316d7b674b">ACT_SHOWABLE</a>(T)&#160;&#160;&#160;T *</td></tr>
-<tr class="memdesc:aa4bb06a544dda96fdac27e316d7b674b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A macro to mark a type as <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>, so that it can be freed with <a class="el" href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97" title="Free the memory allocated by act_showable_t.">act_showable_free</a>.  <a href="act__showable_8h.html#aa4bb06a544dda96fdac27e316d7b674b">More...</a><br /></td></tr>
+<tr class="memdesc:aa4bb06a544dda96fdac27e316d7b674b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A macro to mark a type as <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>, so that it can be freed with <a class="el" href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779" title="Free the memory allocated by act_Showable.">act_showableFree</a>.  <a href="act__showable_8h.html#aa4bb06a544dda96fdac27e316d7b674b">More...</a><br /></td></tr>
 <tr class="separator:aa4bb06a544dda96fdac27e316d7b674b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38629eadfb9f00a4fa485815eee2e4d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9">ACT_SHOWABLE_NEW</a>(T,  allocator,  show_func,  error_code)</td></tr>
-<tr class="memdesc:a38629eadfb9f00a4fa485815eee2e4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> type for a struct of type T.  <a href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9">More...</a><br /></td></tr>
+<tr class="memitem:a38629eadfb9f00a4fa485815eee2e4d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9">ACT_SHOWABLE_NEW</a>(T,  allocator,  show_func,  error_code)&#160;&#160;&#160;  <a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e">act_showableNew</a>(allocator, sizeof(T), (<a class="el" href="act__showable_8h.html#a20a36b84f82442568ca17f5f61896b2b">AsStringFnPtr</a>)(show_func), error_code)</td></tr>
+<tr class="memdesc:a38629eadfb9f00a4fa485815eee2e4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> type for a struct of type T.  <a href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9">More...</a><br /></td></tr>
 <tr class="separator:a38629eadfb9f00a4fa485815eee2e4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a49659939a40fdecee33288bb295ec467"><td class="memItemLeft" align="right" valign="top"><a id="a49659939a40fdecee33288bb295ec467"></a>
-typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a></td></tr>
-<tr class="memdesc:a49659939a40fdecee33288bb295ec467"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type defined for convinece. <br /></td></tr>
-<tr class="separator:a49659939a40fdecee33288bb295ec467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2f784746be45d615499619bfd86efcf"><td class="memItemLeft" align="right" valign="top"><a id="af2f784746be45d615499619bfd86efcf"></a>
-typedef enum <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2">act_showable_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#af2f784746be45d615499619bfd86efcf">act_showable_error_t</a></td></tr>
-<tr class="memdesc:af2f784746be45d615499619bfd86efcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The possible error values. <br /></td></tr>
-<tr class="separator:af2f784746be45d615499619bfd86efcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a095bf632269dc3e61e4b13acfd0c73ce"><td class="memItemLeft" align="right" valign="top"><a id="a095bf632269dc3e61e4b13acfd0c73ce"></a>
-typedef <a class="el" href="structact__string__t.html">act_string_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a095bf632269dc3e61e4b13acfd0c73ce">as_string_fnptr</a>) (const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *showable)</td></tr>
-<tr class="memdesc:a095bf632269dc3e61e4b13acfd0c73ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type alias to the function pointer for <a class="el" href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5" title="Create a new act_showable_t type for a struct.">act_showable_new</a>. <br /></td></tr>
-<tr class="separator:a095bf632269dc3e61e4b13acfd0c73ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e039a77b99e62f7397d1e5ff676cb2"><td class="memItemLeft" align="right" valign="top"><a id="ae9e039a77b99e62f7397d1e5ff676cb2"></a>
+typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a></td></tr>
+<tr class="memdesc:ae9e039a77b99e62f7397d1e5ff676cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type defined for convinece. <br /></td></tr>
+<tr class="separator:ae9e039a77b99e62f7397d1e5ff676cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1b60b9264617eca1145f3baadacb85"><td class="memItemLeft" align="right" valign="top"><a id="a5a1b60b9264617eca1145f3baadacb85"></a>
+typedef enum <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4">act_ShowableError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a5a1b60b9264617eca1145f3baadacb85">act_ShowableError</a></td></tr>
+<tr class="memdesc:a5a1b60b9264617eca1145f3baadacb85"><td class="mdescLeft">&#160;</td><td class="mdescRight">The possible error values. <br /></td></tr>
+<tr class="separator:a5a1b60b9264617eca1145f3baadacb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a36b84f82442568ca17f5f61896b2b"><td class="memItemLeft" align="right" valign="top"><a id="a20a36b84f82442568ca17f5f61896b2b"></a>
+typedef <a class="el" href="structact__String.html">act_String</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a20a36b84f82442568ca17f5f61896b2b">AsStringFnPtr</a>) (const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *showable)</td></tr>
+<tr class="memdesc:a20a36b84f82442568ca17f5f61896b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type alias to the function pointer for <a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e" title="Create a new act_Showable type for a struct.">act_showableNew</a>. <br /></td></tr>
+<tr class="separator:a20a36b84f82442568ca17f5f61896b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a0d19afb5b459d97eff1df47b73b016a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2">act_showable_error_t</a> { <br />
-&#160;&#160;<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2add4ba10b0c7e335573e0ab60358126a8">ACT_SHOWABLE_ERROR_SUCCESS</a> = 0x0
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a8651b61487bb49c5180fa0d7239bb37c">ACT_SHOWABLE_ERROR_NULL_SHOWABLE</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a110e2be50cbcb7a07712e585f97ff3e2">ACT_SHOWABLE_ERROR_NULL_HEADER</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a1a7e62a748d898669604789e755751be">ACT_SHOWABLE_ERROR_NULL_ALLOCATOR</a>
+<tr class="memitem:a45d900da3381d087039f99901c63d1f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4">act_ShowableError</a> { <br />
+&#160;&#160;<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4add4ba10b0c7e335573e0ab60358126a8">ACT_SHOWABLE_ERROR_SUCCESS</a> = 0x0
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a8651b61487bb49c5180fa0d7239bb37c">ACT_SHOWABLE_ERROR_NULL_SHOWABLE</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a110e2be50cbcb7a07712e585f97ff3e2">ACT_SHOWABLE_ERROR_NULL_HEADER</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a1a7e62a748d898669604789e755751be">ACT_SHOWABLE_ERROR_NULL_ALLOCATOR</a>
 , <br />
-&#160;&#160;<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a7ed78b717b88e0c095e97f95aad6ddab">ACT_SHOWABLE_ERROR_NULL_POINTER</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2ac8740b585e345697ae37ac2e197e464a">ACT_SHOWABLE_ERROR_ALLOCATION_FAILED</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a0440bc6416ca60ea8d0be8cdd63770d3">ACT_SHOWABLE_ERROR_NULL_LOGGER</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2ac59ecbf154998476e0d6bc852663cde7">ACT_SHOWABLE_ERROR_FPRINTF_ERROR</a>
+&#160;&#160;<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a7ed78b717b88e0c095e97f95aad6ddab">ACT_SHOWABLE_ERROR_NULL_POINTER</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4ac8740b585e345697ae37ac2e197e464a">ACT_SHOWABLE_ERROR_ALLOCATION_FAILED</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a0440bc6416ca60ea8d0be8cdd63770d3">ACT_SHOWABLE_ERROR_NULL_LOGGER</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4ac59ecbf154998476e0d6bc852663cde7">ACT_SHOWABLE_ERROR_FPRINTF_ERROR</a>
 , <br />
-&#160;&#160;<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a15558576f61371bbacc24ffe34437dea">ACT_SHOWABLE_ERROR_SPRINTF_ERROR</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2a98e824e04d5a4d62cad4def5d5301855">ACT_SHOWABLE_ERROR_EMPTY_STRING</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2aa18fed687b478a0165bd243c36374ba4">ACT_SHOWABLE_ERROR_STRING_FREE_FAILED</a>
-, <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2ad01739effdb1c1c6f1767b667742615c">ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED</a>
+&#160;&#160;<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a15558576f61371bbacc24ffe34437dea">ACT_SHOWABLE_ERROR_SPRINTF_ERROR</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4a98e824e04d5a4d62cad4def5d5301855">ACT_SHOWABLE_ERROR_EMPTY_STRING</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4aa18fed687b478a0165bd243c36374ba4">ACT_SHOWABLE_ERROR_STRING_FREE_FAILED</a>
+, <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4ad01739effdb1c1c6f1767b667742615c">ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a0d19afb5b459d97eff1df47b73b016a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The possible error values.  <a href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2">More...</a><br /></td></tr>
-<tr class="separator:a0d19afb5b459d97eff1df47b73b016a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a45d900da3381d087039f99901c63d1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The possible error values.  <a href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4">More...</a><br /></td></tr>
+<tr class="separator:a45d900da3381d087039f99901c63d1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0c44a01f594e961917160de855bda2c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5">act_showable_new</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, size_t struct_size, <a class="el" href="structact__string__t.html">act_string_t</a>(*as_string_func)(const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *), int *error_code)</td></tr>
-<tr class="memdesc:a0c44a01f594e961917160de855bda2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> type for a struct.  <a href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5">More...</a><br /></td></tr>
-<tr class="separator:a0c44a01f594e961917160de855bda2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03ae6fb5b04e2798a152d5da0e021b97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97">act_showable_free</a> (const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *showable, int *error_code)</td></tr>
-<tr class="memdesc:a03ae6fb5b04e2798a152d5da0e021b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>.  <a href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97">More...</a><br /></td></tr>
-<tr class="separator:a03ae6fb5b04e2798a152d5da0e021b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade2e385df605c43f2933fe6c3824324"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__string__t.html">act_string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aade2e385df605c43f2933fe6c3824324">act_showable_struct_as_string</a> (const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *showable, int *error_code)</td></tr>
-<tr class="memdesc:aade2e385df605c43f2933fe6c3824324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of the given <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>.  <a href="act__showable_8h.html#aade2e385df605c43f2933fe6c3824324">More...</a><br /></td></tr>
-<tr class="separator:aade2e385df605c43f2933fe6c3824324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9db8a7a6bcdc7b823316186d67e77af9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a9db8a7a6bcdc7b823316186d67e77af9">act_showable_display</a> (<a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *showable, FILE *logger, int *error_code)</td></tr>
-<tr class="memdesc:a9db8a7a6bcdc7b823316186d67e77af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the given <em>showable</em> as a string to the specified <em>logger</em>.  <a href="act__showable_8h.html#a9db8a7a6bcdc7b823316186d67e77af9">More...</a><br /></td></tr>
-<tr class="separator:a9db8a7a6bcdc7b823316186d67e77af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b8f8e9f4a6b3720a5306ab30bec3758"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__string__t.html">act_string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a7b8f8e9f4a6b3720a5306ab30bec3758">act_showable_uint64_as_string</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, uint64_t val, int *error_code)</td></tr>
-<tr class="memdesc:a7b8f8e9f4a6b3720a5306ab30bec3758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>uint64_t</em> value to a heap allocated string.  <a href="act__showable_8h.html#a7b8f8e9f4a6b3720a5306ab30bec3758">More...</a><br /></td></tr>
-<tr class="separator:a7b8f8e9f4a6b3720a5306ab30bec3758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af203dbc89c4da81c00216dd20ad922c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__string__t.html">act_string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#af203dbc89c4da81c00216dd20ad922c9">act_showable_int64_as_string</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, int64_t val, int *error_code)</td></tr>
-<tr class="memdesc:af203dbc89c4da81c00216dd20ad922c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>int64_t</em> value to a heap allocated string.  <a href="act__showable_8h.html#af203dbc89c4da81c00216dd20ad922c9">More...</a><br /></td></tr>
-<tr class="separator:af203dbc89c4da81c00216dd20ad922c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0305b314d8f693b803ab8065a99dc8d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__string__t.html">act_string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a0305b314d8f693b803ab8065a99dc8d3">act_showable_double_as_string</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, double val, size_t precision, int *error_code)</td></tr>
-<tr class="memdesc:a0305b314d8f693b803ab8065a99dc8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>double</em> value to a heap allocated string.  <a href="act__showable_8h.html#a0305b314d8f693b803ab8065a99dc8d3">More...</a><br /></td></tr>
-<tr class="separator:a0305b314d8f693b803ab8065a99dc8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a249bedab8bfb5a3afe5411543aa91582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__string__t.html">act_string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a249bedab8bfb5a3afe5411543aa91582">act_showable_cstr_as_string</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, const char *val, int *error_code)</td></tr>
-<tr class="memdesc:a249bedab8bfb5a3afe5411543aa91582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>C-string</em> value to a heap allocated string.  <a href="act__showable_8h.html#a249bedab8bfb5a3afe5411543aa91582">More...</a><br /></td></tr>
-<tr class="separator:a249bedab8bfb5a3afe5411543aa91582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41b92a72a646f795eeb0cc18f02253e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e">act_showableNew</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, size_t struct_size, <a class="el" href="structact__String.html">act_String</a>(*as_string_func)(const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *), int *error_code)</td></tr>
+<tr class="memdesc:ad41b92a72a646f795eeb0cc18f02253e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> type for a struct.  <a href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e">More...</a><br /></td></tr>
+<tr class="separator:ad41b92a72a646f795eeb0cc18f02253e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a8e7e65d8d43b4507cd10999fac779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779">act_showableFree</a> (const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *showable, int *error_code)</td></tr>
+<tr class="memdesc:aa0a8e7e65d8d43b4507cd10999fac779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>.  <a href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779">More...</a><br /></td></tr>
+<tr class="separator:aa0a8e7e65d8d43b4507cd10999fac779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0ad9d24c032f296b9a0fe7d8487b0e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__String.html">act_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#af0ad9d24c032f296b9a0fe7d8487b0e4">act_showableStructAsString</a> (const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *showable, int *error_code)</td></tr>
+<tr class="memdesc:af0ad9d24c032f296b9a0fe7d8487b0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of the given <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>.  <a href="act__showable_8h.html#af0ad9d24c032f296b9a0fe7d8487b0e4">More...</a><br /></td></tr>
+<tr class="separator:af0ad9d24c032f296b9a0fe7d8487b0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3afa2962d4e7c722095aaa4c55e326a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aa3afa2962d4e7c722095aaa4c55e326a">act_showableDisplay</a> (<a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *showable, FILE *logger, int *error_code)</td></tr>
+<tr class="memdesc:aa3afa2962d4e7c722095aaa4c55e326a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the given <em>showable</em> as a string to the specified <em>logger</em>.  <a href="act__showable_8h.html#aa3afa2962d4e7c722095aaa4c55e326a">More...</a><br /></td></tr>
+<tr class="separator:aa3afa2962d4e7c722095aaa4c55e326a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7a8c0fe5e2df549e8ca27e1add0063"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__String.html">act_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aab7a8c0fe5e2df549e8ca27e1add0063">act_showableUint64AsString</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, uint64_t val, int *error_code)</td></tr>
+<tr class="memdesc:aab7a8c0fe5e2df549e8ca27e1add0063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>uint64_t</em> value to a heap allocated string.  <a href="act__showable_8h.html#aab7a8c0fe5e2df549e8ca27e1add0063">More...</a><br /></td></tr>
+<tr class="separator:aab7a8c0fe5e2df549e8ca27e1add0063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4af2ccb626de87bc0637412735198d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__String.html">act_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aaa4af2ccb626de87bc0637412735198d">act_showableInt64AsString</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, int64_t val, int *error_code)</td></tr>
+<tr class="memdesc:aaa4af2ccb626de87bc0637412735198d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>int64_t</em> value to a heap allocated string.  <a href="act__showable_8h.html#aaa4af2ccb626de87bc0637412735198d">More...</a><br /></td></tr>
+<tr class="separator:aaa4af2ccb626de87bc0637412735198d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef86115f4e3d1f297a2ab895dbe270ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__String.html">act_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#aef86115f4e3d1f297a2ab895dbe270ec">act_showableDoubleAsString</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, double val, size_t precision, int *error_code)</td></tr>
+<tr class="memdesc:aef86115f4e3d1f297a2ab895dbe270ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>double</em> value to a heap allocated string.  <a href="act__showable_8h.html#aef86115f4e3d1f297a2ab895dbe270ec">More...</a><br /></td></tr>
+<tr class="separator:aef86115f4e3d1f297a2ab895dbe270ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81bcf754accec3f23c13f3440619ff7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structact__String.html">act_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__showable_8h.html#a81bcf754accec3f23c13f3440619ff7a">act_showableCstrAsString</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, const char *val, int *error_code)</td></tr>
+<tr class="memdesc:a81bcf754accec3f23c13f3440619ff7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <em>C-string</em> value to a heap allocated string.  <a href="act__showable_8h.html#a81bcf754accec3f23c13f3440619ff7a">More...</a><br /></td></tr>
+<tr class="separator:a81bcf754accec3f23c13f3440619ff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header defines an interface that allows priting structs as strings. </p>
@@ -193,10 +202,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>A macro to mark a type as <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>, so that it can be freed with <a class="el" href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97" title="Free the memory allocated by act_showable_t.">act_showable_free</a>. </p>
+<p>A macro to mark a type as <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>, so that it can be freed with <a class="el" href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779" title="Free the memory allocated by act_Showable.">act_showableFree</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The type (of struct usually) to create a showable (<a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>) for. </td></tr>
+    <tr><td class="paramname">T</td><td>The type (of struct usually) to create a showable (<a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>) for. </td></tr>
   </table>
   </dd>
 </dl>
@@ -236,86 +245,82 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e">act_showableNew</a>(allocator, sizeof(T), (<a class="el" href="act__showable_8h.html#a20a36b84f82442568ca17f5f61896b2b">AsStringFnPtr</a>)(show_func), error_code)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code" href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5">act_showable_new</a>(allocator, <span class="keyword">sizeof</span>(T), (<a class="code" href="act__showable_8h.html#a095bf632269dc3e61e4b13acfd0c73ce">as_string_fnptr</a>)(show_func),         \</div>
-<div class="line">                   error_code)</div>
-<div class="ttc" id="aact__showable_8h_html_a095bf632269dc3e61e4b13acfd0c73ce"><div class="ttname"><a href="act__showable_8h.html#a095bf632269dc3e61e4b13acfd0c73ce">as_string_fnptr</a></div><div class="ttdeci">act_string_t(* as_string_fnptr)(const act_showable_t *showable)</div><div class="ttdoc">A type alias to the function pointer for act_showable_new.</div><div class="ttdef"><b>Definition:</b> act_showable.h:59</div></div>
-<div class="ttc" id="aact__showable_8h_html_a0c44a01f594e961917160de855bda2c5"><div class="ttname"><a href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5">act_showable_new</a></div><div class="ttdeci">act_showable_t * act_showable_new(const act_allocator_t *allocator, size_t struct_size, act_string_t(*as_string_func)(const act_showable_t *), int *error_code)</div><div class="ttdoc">Create a new act_showable_t type for a struct.</div></div>
-</div><!-- fragment -->
-<p>Create a new <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> type for a struct of type T. </p>
-<p>This is a convinience macro to avoid casts and sizeof when calling <a class="el" href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5" title="Create a new act_showable_t type for a struct.">act_showable_new</a>.</p>
+
+<p>Create a new <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> type for a struct of type T. </p>
+<p>This is a convinience macro to avoid casts and sizeof when calling <a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e" title="Create a new act_Showable type for a struct.">act_showableNew</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of struct to create the <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> for. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of struct to create the <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">show_func</td><td>The function used to convert a value of a given type to a string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an allocated struct of <em>struct_size</em>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function allocates <code>16 + sizeof(T)</code> bytes of memory (The 16 bytes is the size of the internal header used to store <code>showable</code> information).</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97" title="Free the memory allocated by act_showable_t.">act_showable_free</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779" title="Free the memory allocated by act_Showable.">act_showableFree</a> </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a0d19afb5b459d97eff1df47b73b016a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d19afb5b459d97eff1df47b73b016a2">&#9670;&nbsp;</a></span>act_showable_error_t</h2>
+<a id="a45d900da3381d087039f99901c63d1f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d900da3381d087039f99901c63d1f4">&#9670;&nbsp;</a></span>act_ShowableError</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2">act_showable_error_t</a></td>
+          <td class="memname">enum <a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4">act_ShowableError</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The possible error values. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2add4ba10b0c7e335573e0ab60358126a8"></a>ACT_SHOWABLE_ERROR_SUCCESS&#160;</td><td class="fielddoc"><p>Successful operation. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4add4ba10b0c7e335573e0ab60358126a8"></a>ACT_SHOWABLE_ERROR_SUCCESS&#160;</td><td class="fielddoc"><p>Successful operation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a8651b61487bb49c5180fa0d7239bb37c"></a>ACT_SHOWABLE_ERROR_NULL_SHOWABLE&#160;</td><td class="fielddoc"><p>The <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a8651b61487bb49c5180fa0d7239bb37c"></a>ACT_SHOWABLE_ERROR_NULL_SHOWABLE&#160;</td><td class="fielddoc"><p>The <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a110e2be50cbcb7a07712e585f97ff3e2"></a>ACT_SHOWABLE_ERROR_NULL_HEADER&#160;</td><td class="fielddoc"><p>The header pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a110e2be50cbcb7a07712e585f97ff3e2"></a>ACT_SHOWABLE_ERROR_NULL_HEADER&#160;</td><td class="fielddoc"><p>The header pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a1a7e62a748d898669604789e755751be"></a>ACT_SHOWABLE_ERROR_NULL_ALLOCATOR&#160;</td><td class="fielddoc"><p>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a1a7e62a748d898669604789e755751be"></a>ACT_SHOWABLE_ERROR_NULL_ALLOCATOR&#160;</td><td class="fielddoc"><p>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a7ed78b717b88e0c095e97f95aad6ddab"></a>ACT_SHOWABLE_ERROR_NULL_POINTER&#160;</td><td class="fielddoc"><p>The pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a7ed78b717b88e0c095e97f95aad6ddab"></a>ACT_SHOWABLE_ERROR_NULL_POINTER&#160;</td><td class="fielddoc"><p>The pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2ac8740b585e345697ae37ac2e197e464a"></a>ACT_SHOWABLE_ERROR_ALLOCATION_FAILED&#160;</td><td class="fielddoc"><p>The allocation failed. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4ac8740b585e345697ae37ac2e197e464a"></a>ACT_SHOWABLE_ERROR_ALLOCATION_FAILED&#160;</td><td class="fielddoc"><p>The allocation failed. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a0440bc6416ca60ea8d0be8cdd63770d3"></a>ACT_SHOWABLE_ERROR_NULL_LOGGER&#160;</td><td class="fielddoc"><p>The provided logger (<em>FILE*</em>) pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a0440bc6416ca60ea8d0be8cdd63770d3"></a>ACT_SHOWABLE_ERROR_NULL_LOGGER&#160;</td><td class="fielddoc"><p>The provided logger (<em>FILE*</em>) pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2ac59ecbf154998476e0d6bc852663cde7"></a>ACT_SHOWABLE_ERROR_FPRINTF_ERROR&#160;</td><td class="fielddoc"><p><b><em>fprintf</b></em> returned an error. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4ac59ecbf154998476e0d6bc852663cde7"></a>ACT_SHOWABLE_ERROR_FPRINTF_ERROR&#160;</td><td class="fielddoc"><p><b><em>fprintf</b></em> returned an error. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a15558576f61371bbacc24ffe34437dea"></a>ACT_SHOWABLE_ERROR_SPRINTF_ERROR&#160;</td><td class="fielddoc"><p><b><em>sprintf</b></em> returned an error. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a15558576f61371bbacc24ffe34437dea"></a>ACT_SHOWABLE_ERROR_SPRINTF_ERROR&#160;</td><td class="fielddoc"><p><b><em>sprintf</b></em> returned an error. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2a98e824e04d5a4d62cad4def5d5301855"></a>ACT_SHOWABLE_ERROR_EMPTY_STRING&#160;</td><td class="fielddoc"><p>The string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) was empty. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4a98e824e04d5a4d62cad4def5d5301855"></a>ACT_SHOWABLE_ERROR_EMPTY_STRING&#160;</td><td class="fielddoc"><p>The string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) was empty. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2aa18fed687b478a0165bd243c36374ba4"></a>ACT_SHOWABLE_ERROR_STRING_FREE_FAILED&#160;</td><td class="fielddoc"><p><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> returned an error. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4aa18fed687b478a0165bd243c36374ba4"></a>ACT_SHOWABLE_ERROR_STRING_FREE_FAILED&#160;</td><td class="fielddoc"><p><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> returned an error. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0d19afb5b459d97eff1df47b73b016a2ad01739effdb1c1c6f1767b667742615c"></a>ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED&#160;</td><td class="fielddoc"><p>A function allocating <a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a> returned an error. </p>
+<tr><td class="fieldname"><a id="a45d900da3381d087039f99901c63d1f4ad01739effdb1c1c6f1767b667742615c"></a>ACT_SHOWABLE_ERROR_STRING_ALLOC_FAILED&#160;</td><td class="fielddoc"><p>A function allocating <a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a> returned an error. </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a249bedab8bfb5a3afe5411543aa91582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a249bedab8bfb5a3afe5411543aa91582">&#9670;&nbsp;</a></span>act_showable_cstr_as_string()</h2>
+<a id="a81bcf754accec3f23c13f3440619ff7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81bcf754accec3f23c13f3440619ff7a">&#9670;&nbsp;</a></span>act_showableCstrAsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structact__string__t.html">act_string_t</a> act_showable_cstr_as_string </td>
+          <td class="memname"><a class="el" href="structact__String.html">act_String</a> act_showableCstrAsString </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -344,25 +349,25 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The <em>C-string</em> value. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) representing the quoted <em>C-string</em> value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) representing the quoted <em>C-string</em> value.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> </dd></dl>
 
 </div>
 </div>
-<a id="a9db8a7a6bcdc7b823316186d67e77af9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9db8a7a6bcdc7b823316186d67e77af9">&#9670;&nbsp;</a></span>act_showable_display()</h2>
+<a id="aa3afa2962d4e7c722095aaa4c55e326a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3afa2962d4e7c722095aaa4c55e326a">&#9670;&nbsp;</a></span>act_showableDisplay()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void act_showable_display </td>
+          <td class="memname">void act_showableDisplay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *&#160;</td>
           <td class="paramname"><em>showable</em>, </td>
         </tr>
         <tr>
@@ -388,26 +393,26 @@ Functions</h2></td></tr>
 <p>Prints the given <em>showable</em> as a string to the specified <em>logger</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> value to print as a string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> value to print as a string. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">logger</td><td>The file stream to write the string to. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#aade2e385df605c43f2933fe6c3824324" title="Returns the string representation of the given act_showable_t.">act_showable_struct_as_string</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#af0ad9d24c032f296b9a0fe7d8487b0e4" title="Returns the string representation of the given act_Showable.">act_showableStructAsString</a> </dd></dl>
 
 </div>
 </div>
-<a id="a0305b314d8f693b803ab8065a99dc8d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0305b314d8f693b803ab8065a99dc8d3">&#9670;&nbsp;</a></span>act_showable_double_as_string()</h2>
+<a id="aef86115f4e3d1f297a2ab895dbe270ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef86115f4e3d1f297a2ab895dbe270ec">&#9670;&nbsp;</a></span>act_showableDoubleAsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structact__string__t.html">act_string_t</a> act_showable_double_as_string </td>
+          <td class="memname"><a class="el" href="structact__String.html">act_String</a> act_showableDoubleAsString </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -442,25 +447,25 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The <em>double</em> value to turn into a string. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">precision</td><td>The number of decimal points to display in the string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) representing the <em>double</em> value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) representing the <em>double</em> value.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> </dd></dl>
 
 </div>
 </div>
-<a id="a03ae6fb5b04e2798a152d5da0e021b97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03ae6fb5b04e2798a152d5da0e021b97">&#9670;&nbsp;</a></span>act_showable_free()</h2>
+<a id="aa0a8e7e65d8d43b4507cd10999fac779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a8e7e65d8d43b4507cd10999fac779">&#9670;&nbsp;</a></span>act_showableFree()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void act_showable_free </td>
+          <td class="memname">void act_showableFree </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *&#160;</td>
           <td class="paramname"><em>showable</em>, </td>
         </tr>
         <tr>
@@ -477,28 +482,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Free the memory allocated by <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>. </p>
+<p>Free the memory allocated by <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> value to free resources for. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> value to free resources for. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#a0c44a01f594e961917160de855bda2c5" title="Create a new act_showable_t type for a struct.">act_showable_new</a>, <a class="el" href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9" title="Create a new act_showable_t type for a struct of type T.">ACT_SHOWABLE_NEW</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e" title="Create a new act_Showable type for a struct.">act_showableNew</a>, <a class="el" href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9" title="Create a new act_Showable type for a struct of type T.">ACT_SHOWABLE_NEW</a> </dd></dl>
 
 </div>
 </div>
-<a id="af203dbc89c4da81c00216dd20ad922c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af203dbc89c4da81c00216dd20ad922c9">&#9670;&nbsp;</a></span>act_showable_int64_as_string()</h2>
+<a id="aaa4af2ccb626de87bc0637412735198d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4af2ccb626de87bc0637412735198d">&#9670;&nbsp;</a></span>act_showableInt64AsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structact__string__t.html">act_string_t</a> act_showable_int64_as_string </td>
+          <td class="memname"><a class="el" href="structact__String.html">act_String</a> act_showableInt64AsString </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -526,25 +531,25 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The <em>int64_t</em> value to turn into a string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) representing the <em>int64_t</em> value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) representing the <em>int64_t</em> value.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> </dd></dl>
 
 </div>
 </div>
-<a id="a0c44a01f594e961917160de855bda2c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c44a01f594e961917160de855bda2c5">&#9670;&nbsp;</a></span>act_showable_new()</h2>
+<a id="ad41b92a72a646f795eeb0cc18f02253e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41b92a72a646f795eeb0cc18f02253e">&#9670;&nbsp;</a></span>act_showableNew()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a>* act_showable_new </td>
+          <td class="memname"><a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a>* act_showableNew </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -556,7 +561,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structact__string__t.html">act_string_t</a>(*)(const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *)&#160;</td>
+          <td class="paramtype"><a class="el" href="structact__String.html">act_String</a>(*)(const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *)&#160;</td>
           <td class="paramname"><em>as_string_func</em>, </td>
         </tr>
         <tr>
@@ -573,32 +578,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> type for a struct. </p>
+<p>Create a new <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> type for a struct. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">struct_size</td><td>The size of the struct to create a showable for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">as_string_func</td><td>The function used to convert a struct of the given type to a string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an allocated struct of <em>struct_size</em>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function allocates <code>16 + struct_size</code> bytes of memory (The 16 bytes is the size of the internal header used to store <code>showable</code> information).</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#a03ae6fb5b04e2798a152d5da0e021b97" title="Free the memory allocated by act_showable_t.">act_showable_free</a>, <a class="el" href="act__showable_8h.html#a38629eadfb9f00a4fa485815eee2e4d9" title="Create a new act_showable_t type for a struct of type T.">ACT_SHOWABLE_NEW</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__showable_8h.html#aa0a8e7e65d8d43b4507cd10999fac779" title="Free the memory allocated by act_Showable.">act_showableFree</a>, <a class="el" href="act__showable_8h.html#ad41b92a72a646f795eeb0cc18f02253e" title="Create a new act_Showable type for a struct.">act_showableNew</a> </dd></dl>
 
 </div>
 </div>
-<a id="aade2e385df605c43f2933fe6c3824324"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade2e385df605c43f2933fe6c3824324">&#9670;&nbsp;</a></span>act_showable_struct_as_string()</h2>
+<a id="af0ad9d24c032f296b9a0fe7d8487b0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ad9d24c032f296b9a0fe7d8487b0e4">&#9670;&nbsp;</a></span>act_showableStructAsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structact__string__t.html">act_string_t</a> act_showable_struct_as_string </td>
+          <td class="memname"><a class="el" href="structact__String.html">act_String</a> act_showableStructAsString </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467">act_showable_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2">act_Showable</a> *&#160;</td>
           <td class="paramname"><em>showable</em>, </td>
         </tr>
         <tr>
@@ -615,29 +620,29 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the string representation of the given <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a>. </p>
+<p>Returns the string representation of the given <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#a49659939a40fdecee33288bb295ec467" title="A type defined for convinece.">act_showable_t</a> value to get as a string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">showable</td><td>The <a class="el" href="act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2" title="A type defined for convinece.">act_Showable</a> value to get as a string. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) representing the <em>showable</em>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) representing the <em>showable</em>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> </dd></dl>
 
 </div>
 </div>
-<a id="a7b8f8e9f4a6b3720a5306ab30bec3758"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b8f8e9f4a6b3720a5306ab30bec3758">&#9670;&nbsp;</a></span>act_showable_uint64_as_string()</h2>
+<a id="aab7a8c0fe5e2df549e8ca27e1add0063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7a8c0fe5e2df549e8ca27e1add0063">&#9670;&nbsp;</a></span>act_showableUint64AsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structact__string__t.html">act_string_t</a> act_showable_uint64_as_string </td>
+          <td class="memname"><a class="el" href="structact__String.html">act_String</a> act_showableUint64AsString </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -665,12 +670,12 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The allocator used to make internal memory allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The <em>uint64_t</em> value to turn into a string. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2" title="The possible error values.">act_showable_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__showable_8h.html#a45d900da3381d087039f99901c63d1f4" title="The possible error values.">act_ShowableError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__string__t.html" title="[PRIVATE] Represents the a heap allocated string.">act_string_t</a>) representing the <em>uint64_t</em> value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a6c623c2fe672732a6970872fa86542bd" title="Frees all memory allocated by the act_string_t.">act_string_free</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A heap allocated string (<a class="el" href="structact__String.html" title="[PRIVATE] Represents the a heap allocated string.">act_String</a>) representing the <em>uint64_t</em> value.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__string_8h.html#a83996d3f66b6d3a27563c730dcb4d467" title="Frees all memory allocated by the act_String.">act_stringFree</a> </dd></dl>
 
 </div>
 </div>

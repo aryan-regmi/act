@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['alloc_129',['alloc',['../structact__allocator__t.html#a6b6fd61a84ff6bf8320dde8341ad4275',1,'act_allocator_t']]]
+  ['alloc_133',['alloc',['../structact__Allocator.html#a83a978cfb03fabd8dec02ab7c25efb6f',1,'act_Allocator']]]
 ];

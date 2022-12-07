@@ -13,7 +13,7 @@ sources += files([
 ])
 
 # Copy headers to include/base
-base_include_dir = meson.source_root() + '/include/types'
+base_include_dir = meson.source_root() + '/include/core'
 mkdir = find_program('mkdir')
 run_command(
   mkdir,

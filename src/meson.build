@@ -5,4 +5,4 @@ headers = files([
 sources = files([])
 
 subdir('interfaces')
-subdir('types')
+subdir('core')

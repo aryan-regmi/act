@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>act: /home/aryan/Dev/C/act/include/act_allocator.h Source File</title>
+<title>act: /home/aryan/Dev/C/act/include/core/act_allocator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_3d69f64eaf81436fe2b22361382717e5.html">core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,32 +78,32 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// PRIVATE</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// ===================================================================</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> *act__realloc_wrapper(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> *act__reallocWrapper(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> act__free_wrapper(<span class="keyword">const</span> <span class="keywordtype">void</span> *ptr);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> act__freeWrapper(<span class="keyword">const</span> <span class="keywordtype">void</span> *ptr);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// PUBLIC</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// ===================================================================</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structact__allocator__t.html">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structact__allocator__t.html">act_allocator_t</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structact__allocator__t.html#a6b6fd61a84ff6bf8320dde8341ad4275">   36</a></span>&#160;  <span class="keywordtype">void</span> *(*alloc)(<span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structact__Allocator.html">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structact__Allocator.html">act_Allocator</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structact__Allocator.html#a83a978cfb03fabd8dec02ab7c25efb6f">   36</a></span>&#160;  <span class="keywordtype">void</span> *(*alloc)(<span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structact__allocator__t.html#a8f67a9e5560012dd3f950d813cc2ceba">   43</a></span>&#160;  <span class="keywordtype">void</span> *(*resize)(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structact__Allocator.html#a5601b782acd965b04d098a827caf8705">   43</a></span>&#160;  <span class="keywordtype">void</span> *(*resize)(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> nelems, <span class="keywordtype">size_t</span> elem_size);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structact__allocator__t.html#a2c0cc3e83f570d1d74292def11eb8b4c">   48</a></span>&#160;  void (*<a class="code" href="structact__allocator__t.html#a2c0cc3e83f570d1d74292def11eb8b4c">free</a>)(<span class="keyword">const</span> <span class="keywordtype">void</span> *ptr);</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="act__allocator_8h.html#a23ea832a3cdda3deada7b38a136f61ce">   49</a></span>&#160;} <a class="code" href="act__allocator_8h.html#a23ea832a3cdda3deada7b38a136f61ce">act_allocator_t</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structact__Allocator.html#a9724270813fc0e444950b4bf05db1e10">   48</a></span>&#160;  void (*<a class="code" href="structact__Allocator.html#a9724270813fc0e444950b4bf05db1e10">free</a>)(<span class="keyword">const</span> <span class="keywordtype">void</span> *ptr);</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="act__allocator_8h.html#a6515b6da46e0af4d9e2ffae528b54368">   49</a></span>&#160;} <a class="code" href="act__allocator_8h.html#a6515b6da46e0af4d9e2ffae528b54368">act_Allocator</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structact__allocator__t.html">act_allocator_t</a> GPA = {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    .<a class="code" href="structact__allocator__t.html#a6b6fd61a84ff6bf8320dde8341ad4275">alloc</a> = calloc,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    .resize = act__realloc_wrapper,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    .free = act__free_wrapper,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structact__Allocator.html">act_Allocator</a> GPA = {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    .<a class="code" href="structact__Allocator.html#a83a978cfb03fabd8dec02ab7c25efb6f">alloc</a> = calloc,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    .resize = act__reallocWrapper,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    .free = act__freeWrapper,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ACT_ALLOCATOR_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aact__allocator_8h_html_a23ea832a3cdda3deada7b38a136f61ce"><div class="ttname"><a href="act__allocator_8h.html#a23ea832a3cdda3deada7b38a136f61ce">act_allocator_t</a></div><div class="ttdeci">struct act_allocator_t act_allocator_t</div><div class="ttdoc">An allocator used for allocating, resizing, and freeing memory.</div></div>
-<div class="ttc" id="astructact__allocator__t_html"><div class="ttname"><a href="structact__allocator__t.html">act_allocator_t</a></div><div class="ttdoc">An allocator used for allocating, resizing, and freeing memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:31</div></div>
-<div class="ttc" id="astructact__allocator__t_html_a2c0cc3e83f570d1d74292def11eb8b4c"><div class="ttname"><a href="structact__allocator__t.html#a2c0cc3e83f570d1d74292def11eb8b4c">act_allocator_t::free</a></div><div class="ttdeci">void(* free)(const void *ptr)</div><div class="ttdoc">The function used to free a pointer to memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:48</div></div>
-<div class="ttc" id="astructact__allocator__t_html_a6b6fd61a84ff6bf8320dde8341ad4275"><div class="ttname"><a href="structact__allocator__t.html#a6b6fd61a84ff6bf8320dde8341ad4275">act_allocator_t::alloc</a></div><div class="ttdeci">void *(* alloc)(size_t nelems, size_t elem_size)</div><div class="ttdoc">The function used to allocate memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:36</div></div>
+<div class="ttc" id="aact__allocator_8h_html_a6515b6da46e0af4d9e2ffae528b54368"><div class="ttname"><a href="act__allocator_8h.html#a6515b6da46e0af4d9e2ffae528b54368">act_Allocator</a></div><div class="ttdeci">struct act_Allocator act_Allocator</div><div class="ttdoc">An allocator used for allocating, resizing, and freeing memory.</div></div>
+<div class="ttc" id="astructact__Allocator_html"><div class="ttname"><a href="structact__Allocator.html">act_Allocator</a></div><div class="ttdoc">An allocator used for allocating, resizing, and freeing memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:31</div></div>
+<div class="ttc" id="astructact__Allocator_html_a83a978cfb03fabd8dec02ab7c25efb6f"><div class="ttname"><a href="structact__Allocator.html#a83a978cfb03fabd8dec02ab7c25efb6f">act_Allocator::alloc</a></div><div class="ttdeci">void *(* alloc)(size_t nelems, size_t elem_size)</div><div class="ttdoc">The function used to allocate memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:36</div></div>
+<div class="ttc" id="astructact__Allocator_html_a9724270813fc0e444950b4bf05db1e10"><div class="ttname"><a href="structact__Allocator.html#a9724270813fc0e444950b4bf05db1e10">act_Allocator::free</a></div><div class="ttdeci">void(* free)(const void *ptr)</div><div class="ttdoc">The function used to free a pointer to memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

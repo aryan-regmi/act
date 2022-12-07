@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>act: /home/aryan/Dev/C/act/include/act_vector.h File Reference</title>
+<title>act: /home/aryan/Dev/C/act/include/core/act_vector.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_3d69f64eaf81436fe2b22361382717e5.html">core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,9 +81,9 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for act_vector.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="act__vector_8h__incl.png" border="0" usemap="#a_2home_2aryan_2Dev_2C_2act_2include_2act__vector_8h" alt=""/></div>
-<map name="a_2home_2aryan_2Dev_2C_2act_2include_2act__vector_8h" id="a_2home_2aryan_2Dev_2C_2act_2include_2act__vector_8h">
-<area shape="rect" title=" " alt="" coords="159,5,329,47"/>
+<div class="center"><img src="act__vector_8h__incl.png" border="0" usemap="#a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8h" alt=""/></div>
+<map name="a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8h" id="a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8h">
+<area shape="rect" title=" " alt="" coords="150,5,338,47"/>
 <area shape="rect" href="act__allocator_8h.html" title=" " alt="" coords="5,95,123,121"/>
 <area shape="rect" href="act__utils_8h.html" title=" " alt="" coords="147,95,237,121"/>
 <area shape="rect" title=" " alt="" coords="261,95,331,121"/>
@@ -93,98 +93,115 @@ Include dependency graph for act_vector.h:</div>
 <area shape="rect" title=" " alt="" coords="251,169,317,196"/>
 </map>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="act__vector_8h__dep__incl.png" border="0" usemap="#a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8hdep" alt=""/></div>
+<map name="a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8hdep" id="a_2home_2aryan_2Dev_2C_2act_2include_2core_2act__vector_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,193,47"/>
+<area shape="rect" href="act_8h_source.html" title=" " alt="" coords="14,95,185,136"/>
+</map>
+</div>
 </div>
 <p><a href="act__vector_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a065800ee9497c95153a9a5ed9cf1aef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a065800ee9497c95153a9a5ed9cf1aef5">ACT_VEC_NEW</a>(T,  allocator,  error_code)&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96">act_vector_new</a>(allocator, sizeof(T), error_code)</td></tr>
-<tr class="memdesc:a065800ee9497c95153a9a5ed9cf1aef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> that stores elements of type <em>T</em>.  <a href="act__vector_8h.html#a065800ee9497c95153a9a5ed9cf1aef5">More...</a><br /></td></tr>
+<tr class="memitem:a065800ee9497c95153a9a5ed9cf1aef5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a065800ee9497c95153a9a5ed9cf1aef5">ACT_VEC_NEW</a>(T,  allocator,  error_code)&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#a09657c40cc50c9ff9cb9aeb6cfab1079">act_vectorNew</a>(allocator, sizeof(T), error_code)</td></tr>
+<tr class="memdesc:a065800ee9497c95153a9a5ed9cf1aef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> that stores elements of type <em>T</em>.  <a href="act__vector_8h.html#a065800ee9497c95153a9a5ed9cf1aef5">More...</a><br /></td></tr>
 <tr class="separator:a065800ee9497c95153a9a5ed9cf1aef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea03484fbc8204345d73de863dfe491"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#aeea03484fbc8204345d73de863dfe491">ACT_VEC_WCAP</a>(T,  allocator,  capacity,  error_code)&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#af859b2571d8e4e0878ffb3c86ddd5a1b">act_vector_with_capacity</a>(allocator, sizeof(T), capacity, error_code)</td></tr>
-<tr class="memdesc:aeea03484fbc8204345d73de863dfe491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> with the specified capacity.  <a href="act__vector_8h.html#aeea03484fbc8204345d73de863dfe491">More...</a><br /></td></tr>
+<tr class="memitem:aeea03484fbc8204345d73de863dfe491"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#aeea03484fbc8204345d73de863dfe491">ACT_VEC_WCAP</a>(T,  allocator,  capacity,  error_code)&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#a1d4e478808f6fdfc2f28bdb9476bbeda">act_vectorWithCapacity</a>(allocator, sizeof(T), capacity, error_code)</td></tr>
+<tr class="memdesc:aeea03484fbc8204345d73de863dfe491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> with the specified capacity.  <a href="act__vector_8h.html#aeea03484fbc8204345d73de863dfe491">More...</a><br /></td></tr>
 <tr class="separator:aeea03484fbc8204345d73de863dfe491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab781982be0b4020ab6bea575c2e1eb06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#ab781982be0b4020ab6bea575c2e1eb06">ACT_VEC_PUSH</a>(vec,  value,  error_code)</td></tr>
-<tr class="memdesc:ab781982be0b4020ab6bea575c2e1eb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the value to the end of <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#ab781982be0b4020ab6bea575c2e1eb06">More...</a><br /></td></tr>
+<tr class="memdesc:ab781982be0b4020ab6bea575c2e1eb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the value to the end of <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#ab781982be0b4020ab6bea575c2e1eb06">More...</a><br /></td></tr>
 <tr class="separator:ab781982be0b4020ab6bea575c2e1eb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28fe017f492e869dba08a7d9a88c2cd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a28fe017f492e869dba08a7d9a88c2cd4">ACT_VEC_POP</a>(vec,  retptr,  error_code)</td></tr>
-<tr class="memdesc:a28fe017f492e869dba08a7d9a88c2cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the value at the end of <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#a28fe017f492e869dba08a7d9a88c2cd4">More...</a><br /></td></tr>
+<tr class="memdesc:a28fe017f492e869dba08a7d9a88c2cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the value at the end of <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a28fe017f492e869dba08a7d9a88c2cd4">More...</a><br /></td></tr>
 <tr class="separator:a28fe017f492e869dba08a7d9a88c2cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d111783e29d55a3a23448efb6533081"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">ACT_VEC_COPY</a>(T,  original,  copy,  error_code)</td></tr>
+<tr class="memdesc:a4d111783e29d55a3a23448efb6533081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a deep copy the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">More...</a><br /></td></tr>
+<tr class="separator:a4d111783e29d55a3a23448efb6533081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e275c24bbc5cfa7b1415a553745f1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#ab6e275c24bbc5cfa7b1415a553745f1e">ACT_VEC_SHRINK_TO_FIT</a>(T,  vec,  error_code)</td></tr>
+<tr class="memdesc:ab6e275c24bbc5cfa7b1415a553745f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>'s capacity to its length.  <a href="act__vector_8h.html#ab6e275c24bbc5cfa7b1415a553745f1e">More...</a><br /></td></tr>
+<tr class="separator:ab6e275c24bbc5cfa7b1415a553745f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e084df516387fc1ef2344450a10af6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a2e084df516387fc1ef2344450a10af6d">ACT_VEC</a>(T)&#160;&#160;&#160;T *</td></tr>
 <tr class="memdesc:a2e084df516387fc1ef2344450a10af6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convienience macro defined to remind the user to free the given pointer.  <a href="act__vector_8h.html#a2e084df516387fc1ef2344450a10af6d">More...</a><br /></td></tr>
 <tr class="separator:a2e084df516387fc1ef2344450a10af6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af9a190325869dba737574632b5fc71cb"><td class="memItemLeft" align="right" valign="top"><a id="af9a190325869dba737574632b5fc71cb"></a>
-typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a></td></tr>
-<tr class="memdesc:af9a190325869dba737574632b5fc71cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type defined for convinece. <br /></td></tr>
-<tr class="separator:af9a190325869dba737574632b5fc71cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb90c118d4ed7b3c3529641c23acc965"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a></td></tr>
-<tr class="memdesc:aeb90c118d4ed7b3c3529641c23acc965"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header for the "fat-pointer" that holds the vector info.  <a href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">More...</a><br /></td></tr>
-<tr class="separator:aeb90c118d4ed7b3c3529641c23acc965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd56698f0fd2e5b5cd4d1aa9904b3d0c"><td class="memItemLeft" align="right" valign="top"><a id="acd56698f0fd2e5b5cd4d1aa9904b3d0c"></a>
-typedef enum <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a">act_vector_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#acd56698f0fd2e5b5cd4d1aa9904b3d0c">act_vector_error_t</a></td></tr>
-<tr class="memdesc:acd56698f0fd2e5b5cd4d1aa9904b3d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. <br /></td></tr>
-<tr class="separator:acd56698f0fd2e5b5cd4d1aa9904b3d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab551331fdfab2d5c7e34dc0571b5e618"><td class="memItemLeft" align="right" valign="top"><a id="ab551331fdfab2d5c7e34dc0571b5e618"></a>
+typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a></td></tr>
+<tr class="memdesc:ab551331fdfab2d5c7e34dc0571b5e618"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type defined for convinece. <br /></td></tr>
+<tr class="separator:ab551331fdfab2d5c7e34dc0571b5e618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70dc3ec6ec64b3a49db6b54de88ce336"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a></td></tr>
+<tr class="memdesc:a70dc3ec6ec64b3a49db6b54de88ce336"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header for the "fat-pointer" that holds the vector info.  <a href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">More...</a><br /></td></tr>
+<tr class="separator:a70dc3ec6ec64b3a49db6b54de88ce336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb20e58f3b4d47fcdaab6ed54ca4b38c"><td class="memItemLeft" align="right" valign="top"><a id="afb20e58f3b4d47fcdaab6ed54ca4b38c"></a>
+typedef enum <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0">act_VectorError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#afb20e58f3b4d47fcdaab6ed54ca4b38c">act_VectorError</a></td></tr>
+<tr class="memdesc:afb20e58f3b4d47fcdaab6ed54ca4b38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. <br /></td></tr>
+<tr class="separator:afb20e58f3b4d47fcdaab6ed54ca4b38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ae15fea32e7337c447171edf383129e3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a">act_vector_error_t</a> { <br />
-&#160;&#160;<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a> = 0x0
-, <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>
-, <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aab57331ae8499b4f74854e1e8ecb53e25">ACT_VECTOR_ERROR_NULL_HEADER</a>
-, <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa492a32ab6e20ed3d9d8b16a65723c3d5">ACT_VECTOR_ERROR_NULL_ALLOCATOR</a>
+<tr class="memitem:a9a58b258b0d2bf3e2e005f5c05f97de0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0">act_VectorError</a> { <br />
+&#160;&#160;<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a> = 0x0
+, <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>
+, <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0ab57331ae8499b4f74854e1e8ecb53e25">ACT_VECTOR_ERROR_NULL_HEADER</a>
+, <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a492a32ab6e20ed3d9d8b16a65723c3d5">ACT_VECTOR_ERROR_NULL_ALLOCATOR</a>
 , <br />
-&#160;&#160;<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa882cb93148ce99b3234b08af8078bf39">ACT_VECTOR_ERROR_MEMCPY_FAILED</a>
-, <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aadebb191244620ef04218bdc5a419fe73">ACT_VECTOR_ERROR_RESIZE_FAILED</a>
+&#160;&#160;<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a882cb93148ce99b3234b08af8078bf39">ACT_VECTOR_ERROR_MEMCPY_FAILED</a>
+, <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0adebb191244620ef04218bdc5a419fe73">ACT_VECTOR_ERROR_RESIZE_FAILED</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ae15fea32e7337c447171edf383129e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a">More...</a><br /></td></tr>
-<tr class="separator:ae15fea32e7337c447171edf383129e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a9a58b258b0d2bf3e2e005f5c05f97de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0">More...</a><br /></td></tr>
+<tr class="separator:a9a58b258b0d2bf3e2e005f5c05f97de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab3bbec06602cd047c56d84bd38137e96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96">act_vector_new</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, ssize_t data_size, int *error_code)</td></tr>
-<tr class="memdesc:ab3bbec06602cd047c56d84bd38137e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> that stores elements of <em>data_size</em>.  <a href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96">More...</a><br /></td></tr>
-<tr class="separator:ab3bbec06602cd047c56d84bd38137e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af859b2571d8e4e0878ffb3c86ddd5a1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#af859b2571d8e4e0878ffb3c86ddd5a1b">act_vector_with_capacity</a> (const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *allocator, size_t data_size, size_t capacity, int *error_code)</td></tr>
-<tr class="memdesc:af859b2571d8e4e0878ffb3c86ddd5a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> with the specified capacity.  <a href="act__vector_8h.html#af859b2571d8e4e0878ffb3c86ddd5a1b">More...</a><br /></td></tr>
-<tr class="separator:af859b2571d8e4e0878ffb3c86ddd5a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabf6e8461963f512f7193036f2c05d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#aabf6e8461963f512f7193036f2c05d5d">act_vector_shrink_to_fit</a> (<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="memdesc:aabf6e8461963f512f7193036f2c05d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrinks the capacity to fit the length of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#aabf6e8461963f512f7193036f2c05d5d">More...</a><br /></td></tr>
-<tr class="separator:aabf6e8461963f512f7193036f2c05d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e54e99324a9e735e0a74397fac2f7e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6">act_vector_free</a> (const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="memdesc:a5e54e99324a9e735e0a74397fac2f7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6">More...</a><br /></td></tr>
-<tr class="separator:a5e54e99324a9e735e0a74397fac2f7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc962a1b9b1a65355d2ecfa91827d41"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#adcc962a1b9b1a65355d2ecfa91827d41">act_vector_len</a> (const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="memdesc:adcc962a1b9b1a65355d2ecfa91827d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#adcc962a1b9b1a65355d2ecfa91827d41">More...</a><br /></td></tr>
-<tr class="separator:adcc962a1b9b1a65355d2ecfa91827d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb420bf1b63af1aa47b134eaa8d82f5b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#adb420bf1b63af1aa47b134eaa8d82f5b">act_vector_capacity</a> (const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="memdesc:adb420bf1b63af1aa47b134eaa8d82f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the capacity of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#adb420bf1b63af1aa47b134eaa8d82f5b">More...</a><br /></td></tr>
-<tr class="separator:adb420bf1b63af1aa47b134eaa8d82f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a143ab01ff85db375efbe8673de153156"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a143ab01ff85db375efbe8673de153156">act_vector_data_size</a> (const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="memdesc:a143ab01ff85db375efbe8673de153156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data size of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.  <a href="act__vector_8h.html#a143ab01ff85db375efbe8673de153156">More...</a><br /></td></tr>
-<tr class="separator:a143ab01ff85db375efbe8673de153156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb16cf90c15c199cdc91f6d458fae6f1"><td class="memItemLeft" align="right" valign="top"><a id="acb16cf90c15c199cdc91f6d458fae6f1"></a>
-const <a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_get_header</b> (const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="separator:acb16cf90c15c199cdc91f6d458fae6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec93122fef066318f890d3a4ea6ef445"><td class="memItemLeft" align="right" valign="top"><a id="aec93122fef066318f890d3a4ea6ef445"></a>
-<a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_get_mut_header</b> (<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="separator:aec93122fef066318f890d3a4ea6ef445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae49906cbe8d010d7d246546cc735ef8c"><td class="memItemLeft" align="right" valign="top"><a id="ae49906cbe8d010d7d246546cc735ef8c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_incr_len</b> (<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="separator:ae49906cbe8d010d7d246546cc735ef8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a259e7aa73fb27b7e404e59688790d69f"><td class="memItemLeft" align="right" valign="top"><a id="a259e7aa73fb27b7e404e59688790d69f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_decr_len</b> (<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="separator:a259e7aa73fb27b7e404e59688790d69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae155ec80954e3408a75f146052dae35e"><td class="memItemLeft" align="right" valign="top"><a id="ae155ec80954e3408a75f146052dae35e"></a>
-<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_resize</b> (<a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *vec, int *error_code)</td></tr>
-<tr class="separator:ae155ec80954e3408a75f146052dae35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09657c40cc50c9ff9cb9aeb6cfab1079"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a09657c40cc50c9ff9cb9aeb6cfab1079">act_vectorNew</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, size_t data_size, int *error_code)</td></tr>
+<tr class="memdesc:a09657c40cc50c9ff9cb9aeb6cfab1079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> that stores elements of <em>data_size</em>.  <a href="act__vector_8h.html#a09657c40cc50c9ff9cb9aeb6cfab1079">More...</a><br /></td></tr>
+<tr class="separator:a09657c40cc50c9ff9cb9aeb6cfab1079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4e478808f6fdfc2f28bdb9476bbeda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a1d4e478808f6fdfc2f28bdb9476bbeda">act_vectorWithCapacity</a> (const <a class="el" href="structact__Allocator.html">act_Allocator</a> *allocator, size_t data_size, size_t capacity, int *error_code)</td></tr>
+<tr class="memdesc:a1d4e478808f6fdfc2f28bdb9476bbeda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> with the specified capacity.  <a href="act__vector_8h.html#a1d4e478808f6fdfc2f28bdb9476bbeda">More...</a><br /></td></tr>
+<tr class="separator:a1d4e478808f6fdfc2f28bdb9476bbeda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aa4796b16da4c8d5bf290005bd1c869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a7aa4796b16da4c8d5bf290005bd1c869">act_vectorShrinkToFit</a> (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:a7aa4796b16da4c8d5bf290005bd1c869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrinks the capacity to fit the length of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a7aa4796b16da4c8d5bf290005bd1c869">More...</a><br /></td></tr>
+<tr class="separator:a7aa4796b16da4c8d5bf290005bd1c869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e27a91c50a948a8efe6ccb59f057530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a4e27a91c50a948a8efe6ccb59f057530">act_vectorFree</a> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:a4e27a91c50a948a8efe6ccb59f057530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a4e27a91c50a948a8efe6ccb59f057530">More...</a><br /></td></tr>
+<tr class="separator:a4e27a91c50a948a8efe6ccb59f057530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dabad34d2e94f40f92a042a7494f80c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:a1dabad34d2e94f40f92a042a7494f80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">More...</a><br /></td></tr>
+<tr class="separator:a1dabad34d2e94f40f92a042a7494f80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854f9c3c6d4274038ac841841e3dcea0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a854f9c3c6d4274038ac841841e3dcea0">act_vectorCapacity</a> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:a854f9c3c6d4274038ac841841e3dcea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the capacity of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a854f9c3c6d4274038ac841841e3dcea0">More...</a><br /></td></tr>
+<tr class="separator:a854f9c3c6d4274038ac841841e3dcea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9906feeb7cc9e1c2ce635cf9033acbbe"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#a9906feeb7cc9e1c2ce635cf9033acbbe">act_vectorDataSize</a> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:a9906feeb7cc9e1c2ce635cf9033acbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data size of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#a9906feeb7cc9e1c2ce635cf9033acbbe">More...</a><br /></td></tr>
+<tr class="separator:a9906feeb7cc9e1c2ce635cf9033acbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad561a1479f80abb27afff0c3ff38d17"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act__vector_8h.html#aad561a1479f80abb27afff0c3ff38d17">act_vectorAllocator</a> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="memdesc:aad561a1479f80abb27afff0c3ff38d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.  <a href="act__vector_8h.html#aad561a1479f80abb27afff0c3ff38d17">More...</a><br /></td></tr>
+<tr class="separator:aad561a1479f80abb27afff0c3ff38d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e03d3ad8cd2adf3d094e84b407dfe8e"><td class="memItemLeft" align="right" valign="top"><a id="a7e03d3ad8cd2adf3d094e84b407dfe8e"></a>
+const <a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vectorGetHeader</b> (const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="separator:a7e03d3ad8cd2adf3d094e84b407dfe8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40d077911df0f37270bac4c51d448ba"><td class="memItemLeft" align="right" valign="top"><a id="ae40d077911df0f37270bac4c51d448ba"></a>
+<a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vectorGetMutHeader</b> (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="separator:ae40d077911df0f37270bac4c51d448ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5288a5005f288cefa7831aca28a41f8a"><td class="memItemLeft" align="right" valign="top"><a id="a5288a5005f288cefa7831aca28a41f8a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vectorIncrLen</b> (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="separator:a5288a5005f288cefa7831aca28a41f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2fb0cd46cf266fea4e80517cee8dd3"><td class="memItemLeft" align="right" valign="top"><a id="acb2fb0cd46cf266fea4e80517cee8dd3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vectorDecrLen</b> (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="separator:acb2fb0cd46cf266fea4e80517cee8dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874bdff5dde42d6d5c6315423c875d5d"><td class="memItemLeft" align="right" valign="top"><a id="a874bdff5dde42d6d5c6315423c875d5d"></a>
+<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>act__vectorResize</b> (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *vec, int *error_code)</td></tr>
+<tr class="separator:a874bdff5dde42d6d5c6315423c875d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header defines a heap allocated array and various functions related to it.</p>
-<p>TODO: DOCUMENT ALL ALLOCATING/RESIZING FUNCTIONS!! TODO: Add <code>shrink_to_fit</code> function TODO: Only allocate on first push? </p>
+<div class="textblock"><p>This header defines a heap allocated array and various functions related to it. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2e084df516387fc1ef2344450a10af6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e084df516387fc1ef2344450a10af6d">&#9670;&nbsp;</a></span>ACT_VEC</h2>
@@ -203,7 +220,73 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_decr_len<
 </div><div class="memdoc">
 
 <p>A convienience macro defined to remind the user to free the given pointer. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free </dd></dl>
+
+</div>
+</div>
+<a id="a4d111783e29d55a3a23448efb6533081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d111783e29d55a3a23448efb6533081">&#9670;&nbsp;</a></span>ACT_VEC_COPY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACT_VEC_COPY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">original, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">copy, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">error_code&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    if ((original) == NULL || (copy) == NULL) {                                \</div>
+<div class="line">      *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>;                            \</div>
+<div class="line">      return;                                                                  \</div>
+<div class="line">    }                                                                          \</div>
+<div class="line">                                                                               \</div>
+<div class="line">    T *original_vec = original;                                                \</div>
+<div class="line">    T *copy_vec = copy;                                                        \</div>
+<div class="line">    for (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a>(original, error_code); i++) {         \</div>
+<div class="line">      ACT_VEC_PUSH(copy_vec, original_vec[i], error_code);                     \</div>
+<div class="line">    }                                                                          \</div>
+<div class="line">  } <span class="keywordflow">while</span> (0);</div>
+<div class="ttc" id="aact__vector_8h_html_a1dabad34d2e94f40f92a042a7494f80c"><div class="ttname"><a href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a></div><div class="ttdeci">size_t act_vectorLen(const act_Vector *vec, int *error_code)</div><div class="ttdoc">Get the length of the act_Vector.</div></div>
+<div class="ttc" id="aact__vector_8h_html_a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610"><div class="ttname"><a href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a></div><div class="ttdeci">@ ACT_VECTOR_ERROR_NULL_VECTOR</div><div class="ttdoc">The supplied act_Vector pointer was NULL.</div><div class="ttdef"><b>Definition:</b> act_vector.h:31</div></div>
+</div><!-- fragment -->
+<p>Create a deep copy the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of values stored in the vector. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">original</td><td>The vector to copy (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">copy</td><td>The copy (<a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081" title="Create a deep copy the act_Vector.">ACT_VEC_COPY</a> </dd></dl>
 
 </div>
 </div>
@@ -234,24 +317,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_decr_len<
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96">act_vector_new</a>(allocator, sizeof(T), error_code)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#a09657c40cc50c9ff9cb9aeb6cfab1079">act_vectorNew</a>(allocator, sizeof(T), error_code)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> that stores elements of type <em>T</em>. </p>
-<p>This macro calls <a class="el" href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96" title="Create a new act_vector_t that stores elements of data_size.">act_vector_new</a>, and passes the size of <em>T</em> as the <em>data_size</em> parameter.</p>
+<p>Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> that stores elements of type <em>T</em>. </p>
+<p>This macro calls #act_vector_new, and passes the size of <em>T</em> as the <em>data_size</em> parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of the elements stored in the vector. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> used for internal allocations. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> used for internal allocations. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A heap allocated array.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This macro allocates the <code>sizeof(#act_vector_header_t) + 1</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a>, <a class="el" href="act__vector_8h.html#ab3bbec06602cd047c56d84bd38137e96" title="Create a new act_vector_t that stores elements of data_size.">act_vector_new</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This macro allocates the <code>sizeof(#act_VectorHeader) + 1</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free, #act_vector_new </dd></dl>
 
 </div>
 </div>
@@ -287,31 +370,29 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_decr_len<
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
-<div class="line">    *(error_code) = <a class="code" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a>;                                  <a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">\</a></div>
+<div class="line">    *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a>;                                  <a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">\</a></div>
 <div class="line"><a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">                                                                               \</a></div>
 <div class="line"><a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">    ACT_ASSERT_OR</a>((vec) != NULL,                                               \</div>
-<div class="line">                  *(error_code) = <a class="code" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);               \</div>
+<div class="line">                  *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);               \</div>
 <div class="line">                                                                               \</div>
-<div class="line">    size_t len = <a class="code" href="act__vector_8h.html#adcc962a1b9b1a65355d2ecfa91827d41">act_vector_len</a>(vec, error_code);                              \</div>
+<div class="line">    size_t len = <a class="code" href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a>(vec, error_code);                               \</div>
 <div class="line">                                                                               \</div>
-<div class="line">    act__vector_decr_len(vec, error_code);                                     \</div>
+<div class="line">    act__vectorDecrLen(vec, error_code);                                       \</div>
 <div class="line">    *(retptr) = (vec)[len - 1];                                                \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0);</div>
 <div class="ttc" id="aact__utils_8h_html_ac94ff724b2c4febc92d586b88eb97bb5"><div class="ttname"><a href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">ACT_ASSERT_OR</a></div><div class="ttdeci">#define ACT_ASSERT_OR(expr, default_expr)</div><div class="ttdoc">This macro asserts that the given expression is true, or exectues the default expression.</div><div class="ttdef"><b>Definition:</b> act_utils.h:56</div></div>
-<div class="ttc" id="aact__vector_8h_html_adcc962a1b9b1a65355d2ecfa91827d41"><div class="ttname"><a href="act__vector_8h.html#adcc962a1b9b1a65355d2ecfa91827d41">act_vector_len</a></div><div class="ttdeci">size_t act_vector_len(const act_vector_t *vec, int *error_code)</div><div class="ttdoc">Get the length of the act_vector_t.</div></div>
-<div class="ttc" id="aact__vector_8h_html_ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4"><div class="ttname"><a href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a></div><div class="ttdeci">@ ACT_VECTOR_ERROR_SUCCESS</div><div class="ttdoc">A succesful operation.</div><div class="ttdef"><b>Definition:</b> act_vector.h:32</div></div>
-<div class="ttc" id="aact__vector_8h_html_ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610"><div class="ttname"><a href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a></div><div class="ttdeci">@ ACT_VECTOR_ERROR_NULL_VECTOR</div><div class="ttdoc">The supplied act_vector_t pointer was NULL.</div><div class="ttdef"><b>Definition:</b> act_vector.h:35</div></div>
+<div class="ttc" id="aact__vector_8h_html_a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4"><div class="ttname"><a href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a></div><div class="ttdeci">@ ACT_VECTOR_ERROR_SUCCESS</div><div class="ttdoc">A succesful operation.</div><div class="ttdef"><b>Definition:</b> act_vector.h:28</div></div>
 </div><!-- fragment -->
-<p>Pop the value at the end of <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Pop the value at the end of <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to pop the value from. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">retptr</td><td>The pointer to store the returned value. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The type stored in the <em>retptr</em> parameter must be of the same type/size as the data_size stored in the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The type stored in the <em>retptr</em> parameter must be of the same type/size as the data_size stored in the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </dd></dl>
 
 </div>
 </div>
@@ -347,37 +428,106 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>act__vector_decr_len<
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
-<div class="line">    *(error_code) = <a class="code" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a>;                                  <a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">\</a></div>
+<div class="line">    *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a>;                                  <a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">\</a></div>
 <div class="line"><a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">                                                                               \</a></div>
 <div class="line"><a class="code" href="act__utils_8h.html#ac94ff724b2c4febc92d586b88eb97bb5">    ACT_ASSERT_OR</a>((vec) != NULL,                                               \</div>
-<div class="line">                  *(error_code) = <a class="code" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);               \</div>
+<div class="line">                  *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);               \</div>
 <div class="line">                                                                               \</div>
-<div class="line">    size_t len = <a class="code" href="act__vector_8h.html#adcc962a1b9b1a65355d2ecfa91827d41">act_vector_len</a>(vec, error_code);                              \</div>
-<div class="line">    size_t cap = <a class="code" href="act__vector_8h.html#adb420bf1b63af1aa47b134eaa8d82f5b">act_vector_capacity</a>(vec, error_code);                         \</div>
+<div class="line">    size_t len = <a class="code" href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a>(vec, error_code);                               \</div>
+<div class="line">    size_t cap = <a class="code" href="act__vector_8h.html#a854f9c3c6d4274038ac841841e3dcea0">act_vectorCapacity</a>(vec, error_code);                          \</div>
 <div class="line">                                                                               \</div>
 <div class="line">    if (++len &gt; cap) {                                                         \</div>
-<div class="line">      (vec) = act__vector_resize(vec, error_code);                             \</div>
+<div class="line">      (vec) = act__vectorResize(vec, error_code);                              \</div>
 <div class="line">      ACT_ASSERT_OR((vec) != NULL,                                             \</div>
-<div class="line">                    *(error_code) = <a class="code" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);             \</div>
+<div class="line">                    *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610">ACT_VECTOR_ERROR_NULL_VECTOR</a>);             \</div>
 <div class="line">    }                                                                          \</div>
 <div class="line">                                                                               \</div>
 <div class="line">    (vec)[len - 1] = value;                                                    \</div>
-<div class="line">    act__vector_incr_len(vec, error_code);                                     \</div>
+<div class="line">    act__vectorIncrLen(vec, error_code);                                       \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0);</div>
-<div class="ttc" id="aact__vector_8h_html_adb420bf1b63af1aa47b134eaa8d82f5b"><div class="ttname"><a href="act__vector_8h.html#adb420bf1b63af1aa47b134eaa8d82f5b">act_vector_capacity</a></div><div class="ttdeci">size_t act_vector_capacity(const act_vector_t *vec, int *error_code)</div><div class="ttdoc">Get the capacity of the act_vector_t.</div></div>
+<div class="ttc" id="aact__vector_8h_html_a854f9c3c6d4274038ac841841e3dcea0"><div class="ttname"><a href="act__vector_8h.html#a854f9c3c6d4274038ac841841e3dcea0">act_vectorCapacity</a></div><div class="ttdeci">size_t act_vectorCapacity(const act_Vector *vec, int *error_code)</div><div class="ttdoc">Get the capacity of the act_Vector.</div></div>
 </div><!-- fragment -->
-<p>Push the value to the end of <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Push the value to the end of <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to push the value to. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to push. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The <em>value</em> parameter must be of the same type/size as the data size stored in the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>The <em>value</em> parameter must be of the same type/size as the data size stored in the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>.</dd>
 <dd>
 This macro <em>possibly</em> allocates if a resize if triggered (if the capacity is less than the new length after the push). </dd></dl>
+
+</div>
+</div>
+<a id="ab6e275c24bbc5cfa7b1415a553745f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6e275c24bbc5cfa7b1415a553745f1e">&#9670;&nbsp;</a></span>ACT_VEC_SHRINK_TO_FIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACT_VEC_SHRINK_TO_FIT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">vec, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">error_code&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
+<div class="line">    *(error_code) = <a class="code" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4">ACT_VECTOR_ERROR_SUCCESS</a>;                                  \</div>
+<div class="line">                                                                               \</div>
+<div class="line">    size_t len = <a class="code" href="act__vector_8h.html#a1dabad34d2e94f40f92a042a7494f80c">act_vectorLen</a>(vec, error_code);                               \</div>
+<div class="line">    size_t capacity = <a class="code" href="act__vector_8h.html#a854f9c3c6d4274038ac841841e3dcea0">act_vectorCapacity</a>(vec, error_code);                     \</div>
+<div class="line">    size_t data_size = <a class="code" href="act__vector_8h.html#a9906feeb7cc9e1c2ce635cf9033acbbe">act_vectorDataSize</a>(vec, error_code);                    \</div>
+<div class="line">    const <a class="code" href="structact__Allocator.html">act_Allocator</a> *allocator = <a class="code" href="act__vector_8h.html#aad561a1479f80abb27afff0c3ff38d17">act_vectorAllocator</a>(vec, error_code);     \</div>
+<div class="line">                                                                               \</div>
+<div class="line">    if (capacity &gt; len) {                                                      \</div>
+<div class="line">      act_Vector *shrunk =                                                     \</div>
+<div class="line">          act_vectorWithCapacity(allocator, data_size, len, error_code);       <a class="code" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">\</a></div>
+<div class="line"><a class="code" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">                                                                               \</a></div>
+<div class="line"><a class="code" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">      ACT_VEC_COPY</a>(T, vec, shrunk, error_code);                                \</div>
+<div class="line">                                                                               \</div>
+<div class="line">      act_VectorHeader *header = act__vectorGetMutHeader(vec, error_code);     \</div>
+<div class="line">      (*allocator-&gt;free)(header);                                              \</div>
+<div class="line">                                                                               \</div>
+<div class="line">      (vec) = shrunk;                                                          \</div>
+<div class="line">    }                                                                          \</div>
+<div class="line">  } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aact__vector_8h_html_a4d111783e29d55a3a23448efb6533081"><div class="ttname"><a href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081">ACT_VEC_COPY</a></div><div class="ttdeci">#define ACT_VEC_COPY(T, original, copy, error_code)</div><div class="ttdoc">Create a deep copy the act_Vector.</div><div class="ttdef"><b>Definition:</b> act_vector.h:241</div></div>
+<div class="ttc" id="aact__vector_8h_html_a9906feeb7cc9e1c2ce635cf9033acbbe"><div class="ttname"><a href="act__vector_8h.html#a9906feeb7cc9e1c2ce635cf9033acbbe">act_vectorDataSize</a></div><div class="ttdeci">size_t act_vectorDataSize(const act_Vector *vec, int *error_code)</div><div class="ttdoc">Get the data size of the act_Vector.</div></div>
+<div class="ttc" id="aact__vector_8h_html_aad561a1479f80abb27afff0c3ff38d17"><div class="ttname"><a href="act__vector_8h.html#aad561a1479f80abb27afff0c3ff38d17">act_vectorAllocator</a></div><div class="ttdeci">const act_Allocator * act_vectorAllocator(const act_Vector *vec, int *error_code)</div><div class="ttdoc">Get the allocator of the act_Vector.</div></div>
+<div class="ttc" id="astructact__Allocator_html"><div class="ttname"><a href="structact__Allocator.html">act_Allocator</a></div><div class="ttdoc">An allocator used for allocating, resizing, and freeing memory.</div><div class="ttdef"><b>Definition:</b> act_allocator.h:31</div></div>
+</div><!-- fragment -->
+<p>Shrink the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>'s capacity to its length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of values stored in the vector. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to pop the value from. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a4d111783e29d55a3a23448efb6533081" title="Create a deep copy the act_Vector.">ACT_VEC_COPY</a> </dd></dl>
 
 </div>
 </div>
@@ -414,37 +564,37 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#af859b2571d8e4e0878ffb3c86ddd5a1b">act_vector_with_capacity</a>(allocator, sizeof(T), capacity, error_code)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="act__vector_8h.html#a1d4e478808f6fdfc2f28bdb9476bbeda">act_vectorWithCapacity</a>(allocator, sizeof(T), capacity, error_code)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> with the specified capacity. </p>
-<p>This macro calls <a class="el" href="act__vector_8h.html#af859b2571d8e4e0878ffb3c86ddd5a1b" title="Create a new act_vector_t with the specified capacity.">act_vector_with_capacity</a>, and passes the size of <em>T</em> as the <em>data_size</em> parameter.</p>
+<p>Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> with the specified capacity. </p>
+<p>This macro calls #act_vector_with_capacity, and passes the size of <em>T</em> as the <em>data_size</em> parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>The type of the elements stored in the vector. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> used for internal allocations. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> used for internal allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The number of the elements (of <em>data_size</em>) to allocate space for. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A heap allocated array.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This macro allocates the <code>sizeof(#act_vector_header_t) + sizeof(T)*capacity</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This macro allocates the <code>sizeof(#act_VectorHeader) + sizeof(T)*capacity</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="aeb90c118d4ed7b3c3529641c23acc965"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb90c118d4ed7b3c3529641c23acc965">&#9670;&nbsp;</a></span>act_vector_header_t</h2>
+<a id="a70dc3ec6ec64b3a49db6b54de88ce336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70dc3ec6ec64b3a49db6b54de88ce336">&#9670;&nbsp;</a></span>act_VectorHeader</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a> <a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965">act_vector_header_t</a></td>
+          <td class="memname">typedef struct <a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a> <a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336">act_VectorHeader</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -455,47 +605,47 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ae15fea32e7337c447171edf383129e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae15fea32e7337c447171edf383129e3a">&#9670;&nbsp;</a></span>act_vector_error_t</h2>
+<a id="a9a58b258b0d2bf3e2e005f5c05f97de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a58b258b0d2bf3e2e005f5c05f97de0">&#9670;&nbsp;</a></span>act_VectorError</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a">act_vector_error_t</a></td>
+          <td class="memname">enum <a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0">act_VectorError</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Defines various error codes returned by functions that operate on <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aa31cc1e939e7b1d36af9030ad3b3af7a4"></a>ACT_VECTOR_ERROR_SUCCESS&#160;</td><td class="fielddoc"><p>A succesful operation. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0a31cc1e939e7b1d36af9030ad3b3af7a4"></a>ACT_VECTOR_ERROR_SUCCESS&#160;</td><td class="fielddoc"><p>A succesful operation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aa8881246c62f7ea05d83365b283fc6610"></a>ACT_VECTOR_ERROR_NULL_VECTOR&#160;</td><td class="fielddoc"><p>The supplied <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0a8881246c62f7ea05d83365b283fc6610"></a>ACT_VECTOR_ERROR_NULL_VECTOR&#160;</td><td class="fielddoc"><p>The supplied <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aab57331ae8499b4f74854e1e8ecb53e25"></a>ACT_VECTOR_ERROR_NULL_HEADER&#160;</td><td class="fielddoc"><p>The <a class="el" href="act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965" title="The header for the &quot;fat-pointer&quot; that holds the vector info.">act_vector_header_t</a> pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0ab57331ae8499b4f74854e1e8ecb53e25"></a>ACT_VECTOR_ERROR_NULL_HEADER&#160;</td><td class="fielddoc"><p>The <a class="el" href="act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336" title="The header for the &quot;fat-pointer&quot; that holds the vector info.">act_VectorHeader</a> pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aa492a32ab6e20ed3d9d8b16a65723c3d5"></a>ACT_VECTOR_ERROR_NULL_ALLOCATOR&#160;</td><td class="fielddoc"><p>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> pointer was NULL. </p>
+<tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0a492a32ab6e20ed3d9d8b16a65723c3d5"></a>ACT_VECTOR_ERROR_NULL_ALLOCATOR&#160;</td><td class="fielddoc"><p>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> pointer was NULL. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aa882cb93148ce99b3234b08af8078bf39"></a>ACT_VECTOR_ERROR_MEMCPY_FAILED&#160;</td><td class="fielddoc"><p><b><em>memcpy</b></em> failed. </p>
+<tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0a882cb93148ce99b3234b08af8078bf39"></a>ACT_VECTOR_ERROR_MEMCPY_FAILED&#160;</td><td class="fielddoc"><p><b><em>memcpy</b></em> failed. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae15fea32e7337c447171edf383129e3aadebb191244620ef04218bdc5a419fe73"></a>ACT_VECTOR_ERROR_RESIZE_FAILED&#160;</td><td class="fielddoc"><p>Resize <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> failed. </p>
+<tr><td class="fieldname"><a id="a9a58b258b0d2bf3e2e005f5c05f97de0adebb191244620ef04218bdc5a419fe73"></a>ACT_VECTOR_ERROR_RESIZE_FAILED&#160;</td><td class="fielddoc"><p>Resize <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> failed. </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adb420bf1b63af1aa47b134eaa8d82f5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb420bf1b63af1aa47b134eaa8d82f5b">&#9670;&nbsp;</a></span>act_vector_capacity()</h2>
+<a id="aad561a1479f80abb27afff0c3ff38d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad561a1479f80abb27afff0c3ff38d17">&#9670;&nbsp;</a></span>act_vectorAllocator()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t act_vector_capacity </td>
+          <td class="memname">const <a class="el" href="structact__Allocator.html">act_Allocator</a>* act_vectorAllocator </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
         </tr>
         <tr>
@@ -512,11 +662,49 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Get the capacity of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Get the allocator of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to get the allocator of. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The allocator used for <em>vec</em> allocations. </dd></dl>
+
+</div>
+</div>
+<a id="a854f9c3c6d4274038ac841841e3dcea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854f9c3c6d4274038ac841841e3dcea0">&#9670;&nbsp;</a></span>act_vectorCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t act_vectorCapacity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>error_code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the capacity of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to get the capacity of. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
@@ -524,16 +712,16 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
 
 </div>
 </div>
-<a id="a143ab01ff85db375efbe8673de153156"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a143ab01ff85db375efbe8673de153156">&#9670;&nbsp;</a></span>act_vector_data_size()</h2>
+<a id="a9906feeb7cc9e1c2ce635cf9033acbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9906feeb7cc9e1c2ce635cf9033acbbe">&#9670;&nbsp;</a></span>act_vectorDataSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t act_vector_data_size </td>
+          <td class="memname">size_t act_vectorDataSize </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
         </tr>
         <tr>
@@ -550,11 +738,11 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Get the data size of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Get the data size of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to get the data size of. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
@@ -562,16 +750,16 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
 
 </div>
 </div>
-<a id="a5e54e99324a9e735e0a74397fac2f7e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e54e99324a9e735e0a74397fac2f7e6">&#9670;&nbsp;</a></span>act_vector_free()</h2>
+<a id="a4e27a91c50a948a8efe6ccb59f057530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e27a91c50a948a8efe6ccb59f057530">&#9670;&nbsp;</a></span>act_vectorFree()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void act_vector_free </td>
+          <td class="memname">void act_vectorFree </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
         </tr>
         <tr>
@@ -588,28 +776,28 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Free the memory allocated by the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Free the memory allocated by the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to free resources for. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free </dd></dl>
 
 </div>
 </div>
-<a id="adcc962a1b9b1a65355d2ecfa91827d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcc962a1b9b1a65355d2ecfa91827d41">&#9670;&nbsp;</a></span>act_vector_len()</h2>
+<a id="a1dabad34d2e94f40f92a042a7494f80c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dabad34d2e94f40f92a042a7494f80c">&#9670;&nbsp;</a></span>act_vectorLen()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t act_vector_len </td>
+          <td class="memname">size_t act_vectorLen </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
         </tr>
         <tr>
@@ -626,11 +814,11 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Get the length of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Get the length of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vector to get the length of. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
@@ -638,22 +826,22 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
 
 </div>
 </div>
-<a id="ab3bbec06602cd047c56d84bd38137e96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3bbec06602cd047c56d84bd38137e96">&#9670;&nbsp;</a></span>act_vector_new()</h2>
+<a id="a09657c40cc50c9ff9cb9aeb6cfab1079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09657c40cc50c9ff9cb9aeb6cfab1079">&#9670;&nbsp;</a></span>act_vectorNew()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a>* act_vector_new </td>
+          <td class="memname"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a>* act_vectorNew </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ssize_t&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>data_size</em>, </td>
         </tr>
         <tr>
@@ -670,31 +858,31 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> that stores elements of <em>data_size</em>. </p>
+<p>Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> that stores elements of <em>data_size</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> used for internal allocations. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> used for internal allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>The size of the elements stored in the vector. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A heap allocated array.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function allocates the <code>sizeof(#act_vector_header_t) + 1</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function allocates the <code>sizeof(#act_VectorHeader) + 1</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free </dd></dl>
 
 </div>
 </div>
-<a id="aabf6e8461963f512f7193036f2c05d5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabf6e8461963f512f7193036f2c05d5d">&#9670;&nbsp;</a></span>act_vector_shrink_to_fit()</h2>
+<a id="a7aa4796b16da4c8d5bf290005bd1c869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aa4796b16da4c8d5bf290005bd1c869">&#9670;&nbsp;</a></span>act_vectorShrinkToFit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void act_vector_shrink_to_fit </td>
+          <td class="memname">void act_vectorShrinkToFit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a> *&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
         </tr>
         <tr>
@@ -711,12 +899,12 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Shrinks the capacity to fit the length of the <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a>. </p>
+<p>Shrinks the capacity to fit the length of the <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a>. </p>
 <p>The vector is only resized if the capacity is larger than the length.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>The vec to (<em>possibly</em>) shrink. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__string_8h.html#af308633d088a81892e25e90730c0ae01" title="The possible error values.">act_string_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__string_8h.html#a13fcecb3867e490fa9a17330bded596f" title="The possible error values.">act_StringError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
@@ -725,16 +913,16 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
 
 </div>
 </div>
-<a id="af859b2571d8e4e0878ffb3c86ddd5a1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af859b2571d8e4e0878ffb3c86ddd5a1b">&#9670;&nbsp;</a></span>act_vector_with_capacity()</h2>
+<a id="a1d4e478808f6fdfc2f28bdb9476bbeda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4e478808f6fdfc2f28bdb9476bbeda">&#9670;&nbsp;</a></span>act_vectorWithCapacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb">act_vector_t</a>* act_vector_with_capacity </td>
+          <td class="memname"><a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618">act_Vector</a>* act_vectorWithCapacity </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structact__allocator__t.html">act_allocator_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structact__Allocator.html">act_Allocator</a> *&#160;</td>
           <td class="paramname"><em>allocator</em>, </td>
         </tr>
         <tr>
@@ -763,19 +951,19 @@ This macro <em>possibly</em> allocates if a resize if triggered (if the capacity
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="act__vector_8h.html#af9a190325869dba737574632b5fc71cb" title="A type defined for convinece.">act_vector_t</a> with the specified capacity. </p>
+<p>Create a new <a class="el" href="act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618" title="A type defined for convinece.">act_Vector</a> with the specified capacity. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__allocator__t.html" title="An allocator used for allocating, resizing, and freeing memory.">act_allocator_t</a> used for internal allocations. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>The <a class="el" href="structact__Allocator.html" title="An allocator used for allocating, resizing, and freeing memory.">act_Allocator</a> used for internal allocations. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>The size of the elements stored in the vector. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">capacity</td><td>The number of the elements (of <em>data_size</em>) to allocate space for. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#ae15fea32e7337c447171edf383129e3a" title="Defines various error codes returned by functions that operate on act_vector_t.">act_vector_error_t</a>) of the operation.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">error_code</td><td>The error code (<a class="el" href="act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0" title="Defines various error codes returned by functions that operate on act_Vector.">act_VectorError</a>) of the operation.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A heap allocated array.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function allocates the <code>sizeof(#act_vector_header_t) + data_size*capacity</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="act__vector_8h.html#a5e54e99324a9e735e0a74397fac2f7e6" title="Free the memory allocated by the act_vector_t.">act_vector_free</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function allocates the <code>sizeof(#act_VectorHeader) + data_size*capacity</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#act_vector_free </dd></dl>
 
 </div>
 </div>

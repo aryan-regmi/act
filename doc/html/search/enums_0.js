@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['act_5fshowable_5ferror_5ft_142',['act_showable_error_t',['../act__showable_8h.html#a0d19afb5b459d97eff1df47b73b016a2',1,'act_showable.h']]],
-  ['act_5fstring_5fcomparison_5ft_143',['act_string_comparison_t',['../act__string_8h.html#a91da55f1e263da517155599445735727',1,'act_string.h']]],
-  ['act_5fstring_5ferror_5ft_144',['act_string_error_t',['../act__string_8h.html#a6c5ae7591fa47567d4780cf96cec99ac',1,'act_string.h']]],
-  ['act_5fvector_5ferror_5ft_145',['act_vector_error_t',['../act__vector_8h.html#ae15fea32e7337c447171edf383129e3a',1,'act_vector.h']]]
+  ['act_5fshowableerror_146',['act_ShowableError',['../act__showable_8h.html#a45d900da3381d087039f99901c63d1f4',1,'act_showable.h']]],
+  ['act_5fstringcomparison_147',['act_StringComparison',['../act__string_8h.html#ab3b1fc7841e649ea3ff582fbd21f1e4c',1,'act_string.h']]],
+  ['act_5fstringerror_148',['act_StringError',['../act__string_8h.html#a7f0cc5713324bcbcd7dd1fbe2e43c22c',1,'act_string.h']]],
+  ['act_5fvectorerror_149',['act_VectorError',['../act__vector_8h.html#a9a58b258b0d2bf3e2e005f5c05f97de0',1,'act_vector.h']]]
 ];

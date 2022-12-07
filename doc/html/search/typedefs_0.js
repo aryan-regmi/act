@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['act_5fallocator_5ft_132',['act_allocator_t',['../act__allocator_8h.html#a23ea832a3cdda3deada7b38a136f61ce',1,'act_allocator.h']]],
-  ['act_5fshowable_5ferror_5ft_133',['act_showable_error_t',['../act__showable_8h.html#af2f784746be45d615499619bfd86efcf',1,'act_showable.h']]],
-  ['act_5fshowable_5ft_134',['act_showable_t',['../act__showable_8h.html#a49659939a40fdecee33288bb295ec467',1,'act_showable.h']]],
-  ['act_5fstring_5fcomparison_5ft_135',['act_string_comparison_t',['../act__string_8h.html#a8d8d8a06cb8fa9809e45a08e36cd550a',1,'act_string.h']]],
-  ['act_5fstring_5ferror_5ft_136',['act_string_error_t',['../act__string_8h.html#af308633d088a81892e25e90730c0ae01',1,'act_string.h']]],
-  ['act_5fstring_5ft_137',['act_string_t',['../act__string_8h.html#af1043b98ae03fb0ac11d75917e83361e',1,'act_string.h']]],
-  ['act_5fvector_5ferror_5ft_138',['act_vector_error_t',['../act__vector_8h.html#acd56698f0fd2e5b5cd4d1aa9904b3d0c',1,'act_vector.h']]],
-  ['act_5fvector_5fheader_5ft_139',['act_vector_header_t',['../act__vector_8h.html#aeb90c118d4ed7b3c3529641c23acc965',1,'act_vector.h']]],
-  ['act_5fvector_5ft_140',['act_vector_t',['../act__vector_8h.html#af9a190325869dba737574632b5fc71cb',1,'act_vector.h']]],
-  ['as_5fstring_5ffnptr_141',['as_string_fnptr',['../act__showable_8h.html#a095bf632269dc3e61e4b13acfd0c73ce',1,'act_showable.h']]]
+  ['act_5fallocator_136',['act_Allocator',['../act__allocator_8h.html#a6515b6da46e0af4d9e2ffae528b54368',1,'act_allocator.h']]],
+  ['act_5fshowable_137',['act_Showable',['../act__showable_8h.html#ae9e039a77b99e62f7397d1e5ff676cb2',1,'act_showable.h']]],
+  ['act_5fshowableerror_138',['act_ShowableError',['../act__showable_8h.html#a5a1b60b9264617eca1145f3baadacb85',1,'act_showable.h']]],
+  ['act_5fstring_139',['act_String',['../act__string_8h.html#aaf38561711d1e7f55cf0970c9ec938a8',1,'act_string.h']]],
+  ['act_5fstringcomparison_140',['act_StringComparison',['../act__string_8h.html#a65e774c76b6626e98bb3c142bb43be4b',1,'act_string.h']]],
+  ['act_5fstringerror_141',['act_StringError',['../act__string_8h.html#a13fcecb3867e490fa9a17330bded596f',1,'act_string.h']]],
+  ['act_5fvector_142',['act_Vector',['../act__vector_8h.html#ab551331fdfab2d5c7e34dc0571b5e618',1,'act_vector.h']]],
+  ['act_5fvectorerror_143',['act_VectorError',['../act__vector_8h.html#afb20e58f3b4d47fcdaab6ed54ca4b38c',1,'act_vector.h']]],
+  ['act_5fvectorheader_144',['act_VectorHeader',['../act__vector_8h.html#a70dc3ec6ec64b3a49db6b54de88ce336',1,'act_vector.h']]],
+  ['asstringfnptr_145',['AsStringFnPtr',['../act__showable_8h.html#a20a36b84f82442568ca17f5f61896b2b',1,'act_showable.h']]]
 ];
